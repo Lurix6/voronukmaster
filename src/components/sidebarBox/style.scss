@@ -1,0 +1,28 @@
+.sidebar-box {
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.3em;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px 0 rgba(85,85,85,.15);
+
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  h3 {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    color: #999;
+    text-transform: uppercase;
+  }
+}

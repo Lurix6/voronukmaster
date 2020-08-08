@@ -1,0 +1,38 @@
+.store-navbar {
+  position: relative;
+  top: -200px;
+  width: 100%;
+
+  .store-navbar__menu {
+    background-color: white;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px 0 15px 26px;
+    -webkit-box-shadow: 0px 13px 28px -6px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 13px 28px -6px rgba(0,0,0,0.66);
+    box-shadow: 0px 13px 28px -6px rgba(0,0,0,0.66);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      max-height: 205px;
+      flex-wrap: wrap;
+  
+      li {
+        cursor: pointer;
+        line-height: 34px;
+
+        &:hover {
+          color: #30D5C8;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .store-navbar {
+    display: none;
+  }
+}

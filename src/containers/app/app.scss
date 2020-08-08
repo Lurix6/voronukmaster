@@ -1,0 +1,43 @@
+.appContainer {
+  height: 100%;
+
+  .navigation {
+    transition: transform .15s ease-in-out;
+    transition-delay: 1s;
+    background: #1c88bb;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+  }
+
+  .navigationOpen {
+    display: block;
+  }
+  
+  .containerWithOpenNavigator {
+    padding-left: 250px;
+  }
+ 
+  .container {
+    height: 100%;
+  }
+}
+
+#app {
+  height: 100%;
+}
+
+.scrollBox {
+  height: 100%;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+@media screen and (min-width: 770px) {
+  .navigation {
+    display: none;
+  }
+}

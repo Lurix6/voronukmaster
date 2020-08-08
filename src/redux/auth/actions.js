@@ -1,0 +1,27 @@
+const actions = {
+  LOGIN_REQUEST: 'LOGIN_REQUEST',
+  LOGOUT_REQUEST: 'LOGOUT_REQUEST',
+  LOGIN_REQUEST_SUCCESS: 'LOGIN_REQUEST_SUCCESS',
+  LOGIN_REQUEST_ERROR: 'LOGIN_REQUEST_ERROR',
+  UNAUTHORIZED_ERROR: 'UNAUTHORIZED_ERROR',
+  FORBIDEN_ERROR: 'FORBIDEN_ERROR',
+  LOGOUT_PREV_USER: 'LOGOUT_PREV_USER',
+
+  USER_DETAILS_REQUEST: 'USER_DETAILS_REQUEST',
+  USER_DETAILS_SUCCESS: 'USER_DETAILS_SUCCESS',
+  USER_DETAILS_ERROR: 'USER_DETAILS_ERROR',
+
+  loginRequest: (payload) => {
+    return {
+      type: actions.LOGIN_REQUEST,
+      payload,
+    };
+  },
+
+  logoutRequest: () => {
+    return {
+      type: actions.LOGOUT_REQUEST,
+    }
+  },
+}
+export default actions;

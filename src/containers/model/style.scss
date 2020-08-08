@@ -1,0 +1,291 @@
+.model-page {
+  margin: 0 30px;
+
+  .model-page__content {
+    margin: 30px auto;
+    display: flex;
+    max-width: 2000px;
+
+    .model-page__left {
+      width: 100%;
+
+      .model-page__view {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .model-page__left__main {
+
+        .modal-page__left__viewer-additional{
+          .model-name {
+            margin: 0 0 20px;
+            font-size: 22px;
+            font-weight: 600;
+            
+            span:first-child {
+              line-height: 1.5;
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .model-owner__wrapper {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            align-items: center;
+          
+            .model-owner {
+              display: flex;
+
+              img {
+                width: 48px;
+                border-radius: 5px;
+                margin-right: 10px;
+              }
+
+              .model-owner__who-i-am {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                  margin-bottom: 5px;
+                }
+
+                button {
+                  min-height: 24px;
+                  font-size: 11px;
+                  padding: 0 8px;
+                } 
+              }
+            }
+          }
+
+          .modal-status {
+            display: flex;
+
+            .view-helper {
+              display: flex;
+              place-self: center;
+              
+              & > div {
+                display: flex;
+                margin-right: 10px;
+              }
+
+              .count {
+                margin-left: 5px;
+              }
+
+              svg {
+                fill: #bbb;
+                width: 18px;
+              }
+
+            }
+
+            .add-helper {
+              border: 1px solid #999;
+              padding: 0 10px;
+              line-height: 32px;
+              pointer-events: auto;
+              border-radius: 3px;
+
+              svg {
+                fill: #bbb;
+                width: 18px;
+              }
+
+              &:hover {
+                background-color: #FF9E3A;
+                border: 1px solid #FF9E3A;
+                color: white;
+                svg {
+                  fill: white;
+                  width: 18px;
+                }
+              }
+            }
+          }
+
+          .modal-actions {
+            display: flex;
+            margin-top: 10px;
+            span {
+              svg {
+                margin-right: 10px;
+                fill: #888;
+                width: 16px;
+                height: 16px;
+              }
+
+              &:last-child {
+                margin-right: 0;
+                margin-left: auto;
+              }
+            }
+          }
+          .modal-actions > span {
+            margin-right: 30px;
+          }
+
+          .model-inf {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e7e7e7;
+            border-top: 1px solid #e7e7e7;
+            padding: 10px 0;
+            margin-top: 10px;
+            .model-inf__description {
+              .model-inf__description__content {
+
+              }
+              .model-inf__list {
+                padding: 10px 0;
+                font-size: 12px;
+                color: #555;
+
+                .model-inf__row {
+                  display: flex;
+                  font-size: 15px;
+                  margin-bottom: 5px;
+
+                  svg {
+                    margin-right: 10px;
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .store-informations {
+          display: block;
+          padding: 10px;
+          margin-top: -10px;
+          border: 1px solid #e7e7e7;
+          border-radius: 3px;
+          overflow: hidden;
+
+          .store-informations__buy {
+            display: flex;
+            justify-content: space-between;
+
+            .store-informations__buy__price {
+              font-size: 26px;
+              color: #df1660;
+              font-weight: 700;
+              margin-bottom: 8px;
+            }
+
+            .store-informations__buy__reviews {
+              margin-top: 5px;
+              color: #1caad9;
+            }
+
+            .store-informations__add-to-cart {
+              display: flex;
+
+              .button {
+                height: 40px;
+                margin: auto 0;
+              }
+            }
+          }
+
+          .store-informations__more {
+            margin-top: 10px;
+            width: 100%;
+            border: 1px solid #e7e7e7;
+            background-color: #f2f2f2;
+            border-radius: 3px;
+            padding: 10px 20px;
+            color: #1caad9;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .model-page__right {
+      width: 363px;
+      margin-left: 30px;
+      word-wrap: break-word;
+      flex: none;
+
+      .model-page__right__price_inf{
+        border: 1px solid #e7e7e7;
+        padding: 20px;
+        border-radius: 6px;
+      }
+
+      .model-page__right__price {
+        font-size: 40px;
+        color: #df1660;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .model-page__right__header-inf {
+        color: #555;
+        font-size: 13px;
+        margin-bottom: 16px;
+
+        li {
+          line-height: 1.5;
+          padding: 2px 0;
+
+          svg {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      button {
+
+        width: 100%;
+        height: 3em;
+        margin-bottom: 10px;
+
+      }
+
+      .payment-solution > div {
+        height: 21px;
+        width: 42px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      } 
+
+      .payment-solution {
+        display: flex;
+        justify-content: center;
+
+        .payment-solution-visa {
+          background-image: url('https://www.golem.de/specials/_img/visa/Visa_2014_logo;crop.jpg');
+        }
+
+        .payment-solution-master {
+          background-image: url("https://www.mastercard.de/content/dam/mccom/global/logos/logo-mastercard-mobile.svg");
+        }
+        
+        .payment-solution-paypal {
+          background-image: url("https://www.rgblog.de/wp-content/uploads/2018/01/paypal-784404_1280-300x150.png");
+        }
+       
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .model-page__right {
+    display: none;
+  }
+}

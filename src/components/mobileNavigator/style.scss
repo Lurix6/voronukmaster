@@ -1,0 +1,23 @@
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+
+  .navigation-container__main {
+    background-color: #1caad9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    button:last-child {
+      background-color: #ff9e3a;
+    }
+  }
+
+  ul {
+    li {
+      padding: 20px;
+      border-bottom: 1px solid hsla(0,0%,100%,.2);
+      color: white;
+    }
+  }
+}
