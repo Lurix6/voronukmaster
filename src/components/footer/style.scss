@@ -1,0 +1,104 @@
+.footer {
+  background-color: #181F28;
+  color: white;
+  height: 500px;
+  .footer-container {
+    .row {
+      display: flex;
+      flex-direction: row;
+      padding-top: 30px;
+      margin: 0 auto;
+    
+      .sendMeContainer {
+        width: 50%;
+        position: relative;
+        .send-me {
+          z-index: 10;
+          position: absolute;
+          right: -30px;
+          border: 3px solid whitesmoke;
+          flex-grow: 1;
+          color: white;
+          padding: 30px 65px 15px 15px;
+
+          h2 {
+            color: white;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+          }
+
+          .ant-btn {
+            background-color: #FF9000;
+            padding: 10px 20px;
+            height: calc(1.2em + 30px);
+            .btn-wrapper {
+              display: flex;
+              width: max-content;
+              font-size: 1.2em;
+              height: 100%;
+              color: #fff;
+
+              border: 0 solid transparent;
+              border-radius: 0;
+
+            }
+          }
+          textarea {
+            min-width: 315px;
+          }
+
+
+        }
+      }
+      .adres {
+        position: relative;
+        flex-grow: 1;
+        width: 50%;
+
+        .adres-container {
+          position: absolute;
+          top: -50px;
+          background-color: #ff9000;
+          padding: 20px 60px;
+          width: 100%;
+
+          .adressItem {
+            margin-bottom: 15px;
+
+            h3 { 
+              font-size: 115%;
+              color: white; 
+            }
+
+            p {
+              font-size: 120%;
+              a {
+              color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .row {
+    flex-direction: column !important;
+    .sendMeContainer {
+      width: 100% !important;
+      height: 500px;
+
+      .send-me {
+        position: relative !important;
+        padding: 15px 30px !important;
+        margin: 10px;
+        right: 0 !important;
+      }
+    }
+    .adres {
+      width: 100% !important;
+    }
+  }
+}

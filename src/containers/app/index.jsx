@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/header';
 import classNames from 'classnames';
 import AppRouter from './AppRouter'
+import { withRouter } from "react-router";
 import './app.scss';
 
-const SignIn = (props) => {
+const App = (props) => {
 
-  const [visible, setVisisble] = useState(false);
-  const changeVisible = () => setVisisble(!visible);
+  const [visible, setVisisble] = useState(window.innerWidth < 900);
 
   useEffect(() => {
     window.addEventListener('resize', resizeHendle);
@@ -18,23 +18,28 @@ const SignIn = (props) => {
 }, []);
 
 const resizeHendle = (e) => {
-  if (e.target.innerWidth > 900) {
-    setVisisble(false)
-  } else {
-    setVisisble(true)
-  }
+  setVisisble(isPhoneView())
 }
+
+const isPhoneView = () => {
+  const scrollBox = document.querySelector('.scrollBox');
+  return scrollBox.offsetWidth < 900
+} 
 
   return (
     <div className="appContainer"> 
       <div className={ classNames('container') }>
-        <Header phone={visible} />
+        <Header 
+          history={ props.history }
+          location= { props.location }
+          phone={visible} 
+        />
         <div style={{height: '100%'}} >
-          <AppRouter />
+          <AppRouter {...props} />
         </div>
       </div>
     </div>
   )
 }
 
-export default  SignIn;
+export default withRouter(App);

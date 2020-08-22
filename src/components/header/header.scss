@@ -100,6 +100,10 @@
             line-height: 40px;
             font-weight: 100;
 
+            a {
+              color: #000;
+            }
+
             &:before {
               position: absolute;
               top: 0;
@@ -197,6 +201,29 @@
       }
     }
   }
+
+
+  .nav-bar-collapsed {
+    background-color: #FFF;
+
+    li {
+      text-align: center;
+      list-style: none;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      
+      a {
+        color: black;
+      }
+    }
+
+    .active-bar {
+      a {
+        padding-bottom: 3px;
+        border-bottom: 2px solid #FF9000;
+      }
+    }
+  } 
 }
 
 .is-visible {
@@ -253,6 +280,14 @@
       &:before {
         left: -17px !important;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo-container {
+    img {
+      max-width: 150px !important;
     }
   }
 }

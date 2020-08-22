@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import App from './containers/app'
 import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
-
+import { withRouter } from "react-router";
 
 const DashApp = () => (
   <BrowserRouter>

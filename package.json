@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
+    "emailjs-com": "^2.6.3",
     "file-loader": "^6.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import StorePage from '../store/';
-import Model from '../model/';
-import User from '../../containers/user/'
+import Skuseny from '../skuseny/'
 import Dashbord from '../dashbord/'
 
 const routes = [
@@ -12,14 +10,9 @@ const routes = [
     component: Dashbord 
   },
   {
-    path: 'store/categories',
+    path: 'skuseny-instalater',
     exact: true,
-    component: <div>dfhjkdfhkj</div>  
-  },
-  {
-    path: 'user/:id',
-    exact: true,
-    component: User,
+    component: Skuseny  
   },
   {
     path: 'prepareModel',
@@ -31,10 +24,7 @@ const routes = [
     path: 'sell',
     component: () => <div>Продати модуль</div> 
   },
-  {
-    path: 'model/:id',
-    component: Model
-  }
+
 ];
 
 export default function AppRouter(props) {
@@ -49,10 +39,10 @@ export default function AppRouter(props) {
             return (
               <Route
                {...otherProps}
-              exact={exact}
-              key={singleRoute.path}
-              path={ `/${path}` }
-              render={ props => <Component { ...props } /> }
+                exact={exact}
+                key={singleRoute.path}
+                path={ `/${path}` }
+                render={ props => <Component { ...props } /> }
             />
             )
           })
