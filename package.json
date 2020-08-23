@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
+    "antd-mask-input": "^0.1.13",
     "emailjs-com": "^2.6.3",
     "file-loader": "^6.0.0",
     "react": "^16.13.0",

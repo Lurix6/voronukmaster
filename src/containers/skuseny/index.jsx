@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import FirstLegend from '../../assets/img/legend-1.jpg';
 import Footer from '../../components/footer';
 
 const Skuseny = (props) => {
@@ -9,7 +8,6 @@ const Skuseny = (props) => {
     <div className="individual-page">
       <div className="img-wrapper">
         <div style={{
-          backgroundImage: `url(${FirstLegend})`,
           }}>
         </div>
       </div>

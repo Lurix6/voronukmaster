@@ -34,7 +34,7 @@ const isPhoneView = () => {
           location= { props.location }
           phone={visible} 
         />
-        <div style={{height: '100%'}} >
+        <div >
           <AppRouter {...props} />
         </div>
       </div>

@@ -1,155 +1,355 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.scss';
-import FirstLegend from '../../assets/img/legend-1.jpg';
-import ElectroService from '../../assets/img/electroservice.jpg';
-import Vodopost from '../../assets/img/vodopost.jpg'
-import Kuhna from '../../assets/img/kuhna.jpg'
-import Santina from '../../assets/img/santina.jpg'
-import Basein from '../../assets/img/baseyn.jpg'
+import Baner from '../../assets/img/baner.jpg'
+import Car from '../../assets/img/car.svg'
+import Time from '../../assets/img/time.svg'
+import Mask from '../../assets/img/mask.svg'
+import MaskedInput from 'antd-mask-input'
+import { Link } from 'react-router-dom'
+import { Form, Button } from 'antd';
+import moment from 'moment'
+import { Carousel } from 'antd';
+import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
+
+import Garant from '../../assets/svg/garant.svg'
+import Speed from '../../assets/svg/speed.svg'
+import Securety from '../../assets/svg/securety.svg'
+import Reliability from '../../assets/svg/reliability.svg'
+import Return from '../../assets/svg/return.svg'
+import PayMent from '../../assets/svg/payment.svg'
+import Env from '../../assets/svg/env.svg'
+import Sale from '../../assets/svg/sale.svg'
+
+import Fignushki from '../../assets/img/fignushki.png'
+import Santehnik from '../../assets/img/santehnik.jpg'
+import Zasor from '../../assets/img/zasor.jpg'
+import Vanna from '../../assets/img/vanna.jpg'
+import Truba from '../../assets/img/truba.jpg'
+
 
 const Dashbord = (props) => {
-  const height = window.innerHeight * 0.8;
+  const carouselRef = useRef();
+  const carouselAdvantageRef = useRef();
+
+  const onFinish = () => {
+
+  }
+
+  const getCarouselSetting = () => {
+    const carouselSettings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+
+    if (window.innerWidth < 1025) {
+      carouselSettings.slidesToShow = 1
+      carouselSettings.slidesToScroll = 1
+    }
+
+    return carouselSettings
+
+  }
+
+  const review = [
+    {
+      name: 'Vadim',
+      date: moment(),
+      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
+    },
+    {
+      name: 'Vadim',
+      date: moment(),
+      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
+    },
+    {
+      name: 'Vadim',
+      date: moment(),
+      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
+    },
+    {
+      name: 'Vadim',
+      date: moment(),
+      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
+    },
+    {
+      name: 'Vadim',
+      date: moment(),
+      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
+    },
+  ]
+
+  const advantage = [
+    {
+      svg: <Garant />,
+      title : 'Гарантия до 3 лет',
+      text: 'На все выполненные работы предоставляется гарантия сроком до 3 лет.'
+    },
+    {
+      svg: <Speed />,
+      title : 'Скорость',
+      text: 'Мастер приедет к Вам через 45 минут после обращения или в удобное для Вас время.'
+    },
+    {
+      svg: <Securety />,
+      title : 'Безопасность',
+      text: 'Все мастера перед началом работы меряют температуру. Приезжают в масках и перчатках.'
+    },
+    {
+      svg: <Reliability/>,
+      title : 'Надежность',
+      text: 'Работаем с 2016 года. За 2019 год выполнили более 20 тыс. заказов.'
+    },
+    {
+      svg: <Return />,
+      title : 'Гарантия возврата денег',
+      text: 'Если на заказе что-то пойдет не так, мы возместим сумму ущерба.'
+    },
+    {
+      svg: <PayMent />,
+      title : 'Любая форма оплаты',
+      text: 'Вы можете произвести оплату любым удобным для себя способом.'
+    },
+    {
+      svg: <Env />,
+      title : 'Покупка и доставка комплектующих',
+      text: 'Мастер после диагностики определит, что необходимо докупить и сам поедет в магазин.'
+    },
+    {
+      svg: <Sale />,
+      title : 'Скидки',
+      text: 'Для постоянных клиентов, а также для пенсионеров скидка 20% на все виды работ.'
+    },
+  ]
+
+  const services = [
+    {
+      img: <img src={Santehnik} />,
+      title: 'Услуги сантехника',
+      href: '',
+      price: 'От 250 руб.'
+    },
+    {
+      img: <img src={Zasor} />,
+      title: 'Устранение засоров',
+      href: '',
+      price: 'От 790 руб.'
+    },
+    {
+      img: <img src={Truba} />,
+      title: 'Устранение протечек',
+      href: '',
+      price: 'От 490 руб.'
+    },
+    {
+      img: <img src={Santehnik} />,
+      title: 'Ремонт сантехники',
+      href: '',
+      price: 'От 250 руб.'
+    },
+    {
+      img: <img src={Vanna} />,
+      title: 'Установка сантехники',
+      href: '',
+      price: 'От 590 руб.'
+    },
+    {
+      img: <img src={Fignushki} />,
+      title: 'Разводка труб',
+      href: '',
+      price: 'От 390 руб.'
+    },
+  ]
+
+  const goRight = (ref) => {
+    const { current } = ref;
+    current.slick.slickNext()
+  }
+
+  const goLeft = (ref) => {
+    const { current } = ref;
+    current.slick.slickPrev()
+    }
+
   return (
-  <div >
-    <div className='legend1' style={{ 
-        backgroundImage: `url(${FirstLegend})`,
-        height: height
-      }}>
-        <div className='circle-wrapper'>
-         <div className='circle-content'>  
-          <div className='cirle-title'>
-            <h1>Kúpeľňa <br /> a sanita</h1>
-          </div >
-          <div className="last-text">
-            <div>
-	            inštalatérske práce, montáž kúpeľňových doplnkov, vodoinštalatér, ...
+  <div className="global_wrapper" >
+    <div className="main_baner">
+      <img src={Baner} alt="siteBaner"/>
+      <div className="main_content__baner">
+        <div className="main_content__baner_grid">
+          <div className="baner_header">
+            <h1>
+              Сервис для вызова мастера
+            </h1>
+            <p className="price_text" >
+              от 250 рублей
+            </p>
+          </div>
+          <div className="baner_content">
+            <div className="about_us">
+              <li><div><Car /></div><p>Бесплатный выезд</p></li>
+              <li><div><Time /></div><p>Приезд 45 минут</p></li>
+              <li><div><Mask /></div><p>Ежедневный мед.контроль мастеров</p></li>
             </div>
-            <div className='contact'>
-              Kontaktujte nás
+            <div className="baner_form">
+            <Form
+              onFinish={onFinish}
+            >
+              <Form.Item
+                name="phone"
+                rules={[{ required: true, message: 'Please input your Phone!' }]}
+              >
+                <MaskedInput mask="+7 (111) 111-1111"  size="10" />
+              </Form.Item>
+              <Form.Item >
+                <Button type="primary" htmlType="submit">
+                Вызвать мастера
+                </Button>
+              </Form.Item>
+            </Form>
+            </div>
+            <div className="recoll">
+                <p>Перезвоним в течение 1 минуты</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="advantages">
+      <div className="advantages_wrapper">
+        <div className="advantages_header">
+          <h1>Наши преимущества</h1>
+        </div>
+        { window.innerWidth > 1025 ?
+        
+        <div className="grid_advantages_scroll">
+          <div className="go_left">
+            <div onClick={() => goLeft(carouselAdvantageRef)} >
+              <LeftOutlined />
+            </div>
+          </div>
+          <Carousel
+            ref={carouselAdvantageRef}
+            dots={false}
+            infinite={false}
+            speed={500}
+            slidesToShow={4}
+            slidesToScroll={2}
+            autoplay={false}>
+            { advantage.map((item, index) => 
+              (<div className="scrol_grid_item" key={index}>
+                { item.svg }
+                <div className="title">{item.title }</div>
+                <div className="text">{item.text}</div>
+              </div>)
+              )  
+            }
+          </Carousel>
+          <div className="go_right">
+            <div onClick={() => goRight(carouselAdvantageRef)} >
+              <RightOutlined />
+            </div>
+          </div>
+      </div>
+        
+        : 
+
+
+        <div className="grid_advantages">
+          { 
+            advantage.map((item, index) => 
+            (<div className="grid_item" key={index}>
+              { item.svg }
+              <div className="title">{item.title }</div>
+              <div className="text">{item.text}</div>
+            </div>)
+            )  
+          }
+        </div>
+        }
+        
+
+      </div>
+    </div>
+    <div className="base">
+      <div className="base_wrapper">
+        <div className="base_heder">
+          <h1>Цены на услуги</h1>
+        </div>
+        <div className="base_main_container">
+          {
+            services.map((item, index) => (
+              <div key={index} className="grid_item_wrapper">
+                <div className="grid_item">
+                  <div className="preview">
+                    { item.img }
+                    <h2><Link to={item.href}>{ item.title }</Link></h2>
+                  </div>
+                  <div className="price">
+                    <p>{ item.price }</p>
+                  </div>
+                  <div className="action">
+                    <Button>Рассчитать стоимость</Button>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div className="service_reviews">
+      <div className="containr">
+        <div className="title">
+          <div className="main_title">
+            <h1>Отзывы клиентов</h1>
+          </div>
+          <div className="sub_title">
+            <p>на сайте 1106 отзывов</p>
+            <p>Онлайн-отзывы появляются с задержкой в 5-10 минут</p>
+          </div>
+        </div>
+        <div className="main_cntainer">
+          <div className="go_left">
+            <div onClick={() => goLeft(carouselRef)}>
+              <LeftOutlined />
+            </div>
+          </div>
+          <Carousel 
+            {...getCarouselSetting()}
+            ref={ carouselRef }
+            autoplay={false}>
+              {
+                review.map((item, index) => (
+                  <div key={index} className='rewiev-slide'>
+                    <div className="side_body">
+                      <div className="main_inf">
+                        <div className="name">
+                          <h3>{ item.name }</h3>
+                        </div>
+                        <div className="date">
+                          <p>{ moment(item.date).format('DD MMMM YYYY') }</p>
+                        </div>
+                      </div>
+                      <div className="green_small_bar" ></div>
+                      <div className="side__rewiew">
+                        { item.text }
+                      </div>
+                    </div>
+                  </div>
+                )) 
+              }
+          </Carousel>
+          <div className="go_right">
+            <div onClick={() => goRight(carouselRef)}>
+              <RightOutlined />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div className='list-services row'>
-      <div className="col">
-          <div className='service-img' style={{ 
-            backgroundImage: `url(${ElectroService})`,
-          }} />
-        </div>
-      <div className="col">
-        <div className="description">
-          <h2>ELEKTROSERVIS</h2>
-          <p>
-            Zväčša staršie stavby majú inštalovanú zastaralú technológiu vodičov, 
-            čoho dôsledkom zvyknú byť problémy s elektrinou v domácnosti. Časté 
-            vyhadzovanie ističov poistiek, prehrievanie alebo spaľovanie vodičov, 
-            skratovanie spotrebičov ohrozuje vaše zdravie a bezpečnosť majetku.
-          </p>
-          <p>Ponúkame elektroservis, opravu elektroinštalácií, montáž svietidiel, 
-            vypínačov, zásuviek, zapájanie spotrebičov…</p>
-            <div className="contact-us-btn">Zobraziť viac</div>
-        </div>
-      </div>
-   </div >
-   <div className='list-services row'>
-      <div className="col">
-        <div className="description yel">
-          <h2>VODOINŠTALÁCIE</h2>
-          <p>
-          	Veľmi praktickým spôsobom prepojenia vody v domácnostiach na miestach 
-            so sťaženým prístupom, sa stali flexibilné hadice. Využívajú sa na 
-            pripojenie vody k vodovodným batériám v kuchyni alebo kúpeľni, 
-            pripojenie automatickej práčky k vode, pripojenie nádržky WC.          
-          </p>
-          <p>
-          	Ponúkame inštalatérske práce, montáž kúpeľňových doplnkov, 
-            pripojenie vody a odpadu k linke, výmenu a montáž umývadiel, 
-            opravu WC, opravu sifónov…</p>
-          <div className="contact-us-btn">Zobraziť viac</div>
-        </div>
-        </div>
-        <div className="col">
-        <div className='service-img' style={{ 
-          backgroundImage: `url(${Vodopost})`,
-        }}/>
-      </div>
-   </div >
-   <div className='list-services row'>
-      <div className="col">
-        <div className='service-img' style={{ 
-          backgroundImage: `url(${Santina})`,
-        }}/>
-      </div>
-      <div className="col">
-        <div className="description">
-          <h2>KÚPEĽNE A SANITA</h2>
-          <p>
-          Pekné a moderné kúpeľne dnes ponúkajú široký priestor pre doplnky, 
-          ktoré sú z praktického, estetického a v neposlednom rade často 
-          zdravotného hľadiska vhodné pre pohodlnejší a kvalitnejší spôsob 
-          života. Pomôžeme riešiť montáže špeciálnych alebo bežných doplnkov 
-          vo vašej kúpeľni.
-          </p>
-          <p>
-	        Ponúkame montáž kúpeľňových doplnkov, inštalatérske práce, výmenu 
-          a montáž umývadiel, opravu WC, opravu sifónov…
-          </p>
-            <div className="contact-us-btn">Zobraziť viac</div>
-        </div>
-        </div>
-   </div >
-   <div className='list-services row'>
-      <div className="col">
-        <div className="description yel">
-          <h2>KUCHYŇA</h2>
-          <p>
-            Klasické pripojenie vody k batériam kuchynskej linky, osadenie 
-            novej, alebo výmena starej vodovodnej batérie, pripojenie 
-            odpadového odtoku, alebo zavedenie dvojitého odtoku z drezu 
-            kuchynskej linky sú služby, ktoré poskytujeme. Ponúkame služby 
-            spojené s modernými zariadeniami a ich pripojeniu na požadované 
-            zdroje.
-          </p>
-          <p>
-            Ponúkame pripojenie vody a odpadu k linke, inštalatérske práce, 
-            výmenu a montáž umývadiel, opravu sifónov…
-          </p>
-          <div className="contact-us-btn">Zobraziť viac</div>
-        </div>
-        </div>
-        <div className="col">
-        <div className='service-img' style={{ 
-          backgroundImage: `url(${Kuhna})`,
-        }}>
-        </div>
-      </div>
-   </div >
-   <div className='list-services row'>
-      <div className="col">
-        <div className='service-img' style={{ 
-          backgroundImage: `url(${Basein})`,
-        }}>
-        </div>
-      </div>
-      <div className="col">
-        <div className="description">
-          <h2>BAZÉN</h2>
-          <p>
-            Odborná komplexná starostlivosť o bazény so všetkými potrebnými 
-            náležitosťami pre profesionálnu údržbu. Pravidelný dohľad a
-            čistenie bazénu, jeho okolia, kontrola kvality vody a udržiavanie 
-            ph nutného pre bazénovú vodu. Mechanické čistenie vody od usadenín, 
-            lístia, hmyzu, údržba a čistenie filtračného systému.
-          </p>
-          <p>
-            Ponúkame údržbu a opravu bazénov, montáž filtrácií a inej 
-            technológie, predaj bazénovej techniky..
-          </p>
-            <div className="contact-us-btn">Zobraziť viac</div>
-        </div>
-        </div>
-   </div >
   </div>
 )
 }
