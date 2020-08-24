@@ -360,7 +360,7 @@
       .main_cntainer{
         display: flex;
         max-width: 1100px;
-        margin: 30px auto;
+        margin: 20px auto;
 
         .ant-carousel {
           width: calc(100% - 140px);
@@ -451,6 +451,30 @@
           width: 100%;
         }
       }
+
+      .reviews_actions {
+        margin: 0 auto 20px auto;
+        max-width: 1000px;
+        padding-top: 0 15px;
+        display: flex;
+        justify-content: center;
+
+        button {
+          width: 100%;
+          max-width: 250px;
+          color: #37383c;
+          border-color: #c5c5c9;
+          background-color: #f0f6f7;
+          height: 40px;
+          border-radius: 20px;
+          font-size: 1.1em;
+        }
+
+        button:last-child {
+          margin-left: 20px;
+        }
+      }
+
     }
   }
 

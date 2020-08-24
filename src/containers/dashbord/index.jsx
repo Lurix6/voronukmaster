@@ -6,7 +6,7 @@ import Time from '../../assets/img/time.svg'
 import Mask from '../../assets/img/mask.svg'
 import MaskedInput from 'antd-mask-input'
 import { Link } from 'react-router-dom'
-import { Form, Button } from 'antd';
+import { Form, Button, Input } from 'antd';
 import moment from 'moment'
 import { Carousel, Modal, notification  } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
@@ -35,6 +35,7 @@ const Dashbord = (props) => {
   const carouselRef = useRef();
   const carouselAdvantageRef = useRef();
   const [visibleModal, setModalVisible] = useState(false);
+  const [addReview, setAddReviewVisible] = useState(false);
 
   const openNotification = () => {
     notification.open({
@@ -381,6 +382,10 @@ const Dashbord = (props) => {
           </div>
           </div>
         </div>
+        <div className="reviews_actions">
+          <Button onClick={() => setAddReviewVisible(true)} >Оставить отзыв</Button>
+          <Button>Смотреть все отзывы</Button>
+        </div>
       </div>
     </div>
     <div className="calculate_price_modal">
@@ -422,6 +427,46 @@ const Dashbord = (props) => {
             </Form>
             </div>
           </div>
+        </div>
+      </Modal>
+    </div>
+    <div className="add_reviews_modal">
+      <Modal
+        visible={addReview}
+        width={400}
+        onCancel={() => setAddReviewVisible(false)}
+        getContainer={() => document.querySelector(".add_reviews_modal")}
+        footer={null}
+      >
+        <div className="add_review">
+          <div className="title">
+            <p>
+              Оставьте отзыв
+            </p>
+          </div>
+          <div className="body_content">
+            <Form
+              onFinish={onFinish}
+            >
+              <Form.Item
+                name="name"
+                rules={[{ required: true, message: 'Please input your Phone!' }]}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                name="name"
+                rules={[{ required: true, message: 'Please input your Phone!' }]}
+              >
+                <Input.TextArea size="10" />
+              </Form.Item>
+              <Form.Item >
+                <Button type="primary" htmlType="submit">
+                  Оставить отзыв
+                </Button>
+              </Form.Item>
+            </Form>
+            </div>
         </div>
       </Modal>
     </div>
