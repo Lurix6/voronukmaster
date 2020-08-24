@@ -2,11 +2,24 @@ header {
   .main_wrapper {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 5px 15px;
+    
     .main_wrapper__contant {
       display: flex;
       justify-content: space-between;
-      .main_logo {
 
+      .main_wrapper_phone_togle {
+        display: none;
+        align-self: center;
+        svg {
+          font-size: 50px;
+          height: 25px;
+        }
+      }
+
+      .main_logo {
+        display: flex;
+        align-items: center;
       }
       .short_mewnu {
         display: flex;
@@ -37,7 +50,6 @@ header {
           }
         }
       }
-
       .contact_box {
         display: flex;
 
@@ -78,6 +90,133 @@ header {
             font-family: "Museo Sans",Helvetica,Arial,sans-serif;
             font-size: 19px;
           }
+        }
+      }
+
+      .phone_phone {
+        display: none;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE5Ljc5NSAxNi44MDZDMTguNjYyIDE5LjUyMyAxNi4wMDUgMjAgMTUuMTM4IDIwYy0uMjU1IDAtNC4yMjUuMjEtOS45My01LjIwNEMuNjE0IDEwLjQzOC4wNTMgNS43NTMuMDA0IDQuODYzYy0uMDQ4LS44NjguMi0zLjA0MyAzLjE5Mi00LjY1OS4zNy0uMiAxLjEwNi0uMjg5IDEuMjk1LS4xLjA4NS4wODUgMi41OTYgNC4yMTggMi42NjIgNC4zNTVhLjkyMy45MjMgMCAwIDEgLjA5OS40MDNjMCAuMTktLjEzNS40MjUtLjQwNC43MDhhNi44NzggNi44NzggMCAwIDEtLjg3Ny43NzkgOC41NDYgOC41NDYgMCAwIDAtLjg3OC43NWMtLjI3LjI2NC0uNDA0LjQ4Mi0uNDA0LjY1Mi4wMTkuNDQuMzggMi4wMiAzLjEzIDQuNDM3IDIuNzUyIDIuNDE4IDQuMDc3IDMuMSA0LjIwNSAzLjE0Ny4xMjcuMDQ3LjIzMy4wNy4zMTguMDcuMTcgMCAuMzg3LS4xMzQuNjUxLS40MDMuMjY0LS4yNyAxLjE1My0xLjQ4NyAxLjQzNi0xLjc1Ni4yODMtLjI2OS41MTktLjQwMy43MDgtLjQwMy4xMzIgMCAuMjY2LjAzMy40MDMuMDk5czQuMjc0IDIuNDg3IDQuMzUzIDIuNTY4Yy4yMTUuMjIuMDYzLjkwNy0uMSAxLjI5NiIgZmlsbD0iIzNDQjg2OCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+")
+      }
+    }
+  }
+
+  .phone_driver {
+    .ant-drawer-wrapper-body {
+      background-color: #5a5a5a;
+
+      .ant-drawer-header {
+        background-color: #5a5a5a;
+        border-bottom: 1px solid #5a5a5a;
+
+        .ant-drawer-title {
+          p {
+            text-align: center;
+            color: #fff;
+          }
+        }
+      }
+
+      .ant-drawer-body {
+        padding: 0;
+
+        .mobile_main_menu {
+          li {
+            list-style: none;
+            width: 100%;
+            background-color: #ffe00b;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+            a {
+              display: block;
+              width: 100%;
+              padding: 13px 20px;
+              color: #555555;
+              font-weight: 800;
+            }
+          }
+        }
+
+        .mobile_menu_footer {
+          margin-top: 30px;
+          .mobile_sub_menu {
+            display: flex;
+            flex-direction: column;
+
+            li {
+              width: 100%;
+              list-style: none;
+              text-align: center;
+
+              a {
+                color: #fff;
+                font-size: 17px;
+              }
+            }
+          }
+
+          .mobile_call_data{
+            margin-left: 15px;
+            margin-top: 10px;
+             h2, a {
+              font-size: 20px;
+              font-weight: 600;
+              color: #2dbbce;
+             }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    .main_wrapper {
+      .main_wrapper__contant {
+        .main_logo {
+          img {
+            width: 230px;
+            height: 50px;
+          }
+        }
+        .short_mewnu {
+          display: none;
+        }
+
+        .contact_box {
+          display: none !important;
+        }
+
+        .phone_phone {
+          display: block !important;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  header {
+    .main_wrapper {
+      .main_wrapper__contant {
+
+        .main_wrapper_phone_togle {
+          display: block !important;
+        }
+        
+        .main_logo {
+          img {
+            width: 230px;
+            height: 50px;
+          }
+        }
+        .short_mewnu {
+          display: none;
         }
       }
     }

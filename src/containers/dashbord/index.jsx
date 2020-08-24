@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './style.scss';
 import Baner from '../../assets/img/baner.jpg'
 import Car from '../../assets/img/car.svg'
@@ -8,8 +8,12 @@ import MaskedInput from 'antd-mask-input'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'antd';
 import moment from 'moment'
-import { Carousel } from 'antd';
+import { Carousel, Modal, notification  } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
+import MailCred from '../../helpers/emailCred/';
+import emailjs from 'emailjs-com';
+
+import Footer from '../../components/footer/';
 
 import Garant from '../../assets/svg/garant.svg'
 import Speed from '../../assets/svg/speed.svg'
@@ -30,11 +34,33 @@ import Truba from '../../assets/img/truba.jpg'
 const Dashbord = (props) => {
   const carouselRef = useRef();
   const carouselAdvantageRef = useRef();
+  const [visibleModal, setModalVisible] = useState(false);
 
-  const onFinish = () => {
+  const openNotification = () => {
+    notification.open({
+      message: 'Ваш запит надіслано !',
+      description:
+        'Очікуйте дзвінка від майстра.',
+    });
+  };
 
-  }
+  const onFinish = values => {
 
+    values.message_html = `<a href={tel:${values.phone}}>${values.phone}</a>`
+    
+    emailjs
+    .send('gmail', MailCred.TEMPLATE_ID, values, MailCred.USER_ID)
+    .then(
+      result => {
+        console.log(result.text)
+        setModalVisible(false)
+        openNotification()
+      },
+      error => {
+        console.log(error.text)
+      }
+    )  
+  };
   const getCarouselSetting = () => {
     const carouselSettings = {
       dots: false,
@@ -253,10 +279,7 @@ const Dashbord = (props) => {
             </div>
           </div>
       </div>
-        
         : 
-
-
         <div className="grid_advantages">
           { 
             advantage.map((item, index) => 
@@ -269,8 +292,6 @@ const Dashbord = (props) => {
           }
         </div>
         }
-        
-
       </div>
     </div>
     <div className="base">
@@ -291,7 +312,7 @@ const Dashbord = (props) => {
                     <p>{ item.price }</p>
                   </div>
                   <div className="action">
-                    <Button>Рассчитать стоимость</Button>
+                    <Button onClick={() => setModalVisible(true)} >Рассчитать стоимость</Button>
                   </div>
                 </div>
               </div>
@@ -347,9 +368,64 @@ const Dashbord = (props) => {
               <RightOutlined />
             </div>
           </div>
+          <div className="second_review_controlers">
+            <div className="go_left_dub">
+              <div onClick={() => goRight(carouselRef)}>
+                <LeftOutlined />
+              </div>
+            </div>
+            <div className="go_right_dub">
+            <div onClick={() => goLeft(carouselRef)}>
+              <RightOutlined />
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
+    <div className="calculate_price_modal">
+      <Modal
+        visible={visibleModal}
+        width={800}
+        onCancel={() => setModalVisible(false)}
+        getContainer={() => document.querySelector(".calculate_price_modal")}
+        footer={null}
+      >
+        <div className="calculate_price">
+          <div className="title">
+            <Sale />
+            <p>
+              Рассчитать стоимость
+            </p>
+          </div>
+          <div className="body_content">
+            <div className="text_container">
+              <p>
+                Оставьте, пожалуйста, свой номер телефона, и наш специалист перезвонит Вам, чтобы <span class="text-yellow">сориентировать</span> по стоимости работ.
+              </p>
+            </div>
+            <div className="call_back_form">
+            <Form
+              onFinish={onFinish}
+            >
+              <Form.Item
+                name="phone"
+                rules={[{ required: true, message: 'Please input your Phone!' }]}
+              >
+                <MaskedInput mask="+7 (111) 111-1111"  size="10" />
+              </Form.Item>
+              <Form.Item >
+                <Button type="primary" htmlType="submit">
+                  Заказать звонок
+                </Button>
+              </Form.Item>
+            </Form>
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </div>
+    <Footer openModal={() => setModalVisible(true)} />
   </div>
 )
 }
