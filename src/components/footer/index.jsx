@@ -58,13 +58,10 @@ const Footer = ({ openModal }) => {
           </div>
           <div className="right_block">
             <div className="social_media">
-              <a href="">
-                  <VK />
-                </a>
-                <a href="">
+                <a href="https://www.instagram.com/instalaterbratislava/">
                   <IN />
                 </a>
-                <a href="">
+                <a href="https://www.facebook.com/instalater.bratislava.3">
                   <FB />
                 </a>
             </div>

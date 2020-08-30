@@ -40,7 +40,7 @@ const phoneMenu = [
   },
 ]
 
-function Header({ phone, history, location }) {
+function Header({ setModalVisible, phone, history, location }) {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -64,13 +64,13 @@ function Header({ phone, history, location }) {
               Bratislava 
             </div>
             <div className="content_box__right">
-              <a href="tel:+74991109524">+7 (499) 110-95-24 </a>
-              <Button>
+              <a href="tel:+421940136362">+421 (940) 136-362</a>
+              <Button onClick={() => setModalVisible(true)}>
                 Оформить заказ
               </Button>
             </div>
           </div>
-          <a className="phone_phone" href="tel:+74991109524"></a>
+          <a className="phone_phone" href="tel:+421940136362"></a>
         </div>
       </div>
       <div className="wrapper_header">
@@ -109,7 +109,7 @@ function Header({ phone, history, location }) {
               <div className="mobile_call_data">
                 <h2>Bratislava</h2>
                 <h2>
-                  <a href="tel:+74991109524">+74991109524</a>
+                  <a href="tel:+42194036362">+421 (940) 136-362</a>
                 </h2>
               </div>
             </div>

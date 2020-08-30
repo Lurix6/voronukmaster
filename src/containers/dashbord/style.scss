@@ -103,7 +103,7 @@
                 border-radius: 20px;
                 height: 50px;
                 font-size: 120%;
-                width: 170px;
+                width: 180px;
               }
 
               button {
@@ -167,6 +167,7 @@
       .grid_advantages {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         overflow: hidden;
         
         .grid_item {

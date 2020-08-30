@@ -1,9 +1,5 @@
 import React, { useRef, useState, useEffect  } from 'react';
 import './style.scss';
-import Baner from '../../assets/img/baner.jpg'
-import Car from '../../assets/img/car.svg'
-import Time from '../../assets/img/time.svg'
-import Mask from '../../assets/img/mask.svg'
 import MaskedInput from 'antd-mask-input'
 import { Form, Button, Input } from 'antd';
 import moment from 'moment'
@@ -23,17 +19,16 @@ import Sale from '../../assets/svg/sale.svg'
 import SiteContent from './routes';
 import axios from 'axios';
 
-const Dashbord = (props) => {
+const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
   const carouselRef = useRef();
   const carouselAdvantageRef = useRef();
-  const [visibleModal, setModalVisible] = useState(false);
   const [addReview, setAddReviewVisible] = useState(false);
   const [comments, setComents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://us-central1-stl-list.cloudfunctions.net/main/getComments',
+        'https://us-central1-kurenar-vodar.cloudfunctions.net/main/getComments',
       );
         setComents(result.data.respnce);
     };
@@ -50,7 +45,7 @@ const Dashbord = (props) => {
   };
 
   const addNewComment = async (data) => {
-    const res = await axios.post('https://us-central1-stl-list.cloudfunctions.net/main/createComment', data)
+    const res = await axios.post('https://us-central1-kurenar-vodar.cloudfunctions.net/main/createComment', data)
     if( res.status === 200 ) {
       setComents([...comments, {...data, date: moment()}])
       setAddReviewVisible(false)
@@ -99,12 +94,12 @@ const Dashbord = (props) => {
     {
       svg: <Speed />,
       title : 'Rýchlosť',
-      text: 'Majster k vám príde 45 minút po hovore alebo v čase, ktorý vám vyhovuje.'
+      text: 'Majster k vám príde do 45 minút po hovore alebo v čase, ktorý vám vyhovuje.'
     },
     {
       svg: <Securety />,
       title : 'Bezpečnosť',
-      text: 'Majster k vám príde 45 minút po hovore alebo v čase, ktorý vám vyhovuje.'
+      text: 'Myslím na vaše aj svoje zdravie preto prídem v rúšku a rukaviciach.'
     },
     /*
     {
@@ -147,166 +142,20 @@ const Dashbord = (props) => {
 
   return (
   <div className="global_wrapper" >
-    <div className="main_baner">
-      <img src={Baner} alt="siteBaner"/>
-      <div className="main_content__baner">
-        <div className="main_content__baner_grid">
-          <div className="baner_header">
-            <h1>
-              Zavolajte si odborníka už 
-            </h1>
-            <p className="price_text" >
-              od 20 eur
-            </p>
-          </div>
-          <div className="baner_content">
-            <div className="about_us">
-              <li><div><Car /></div><p>Obhliadka zadarmo</p></li>
-              <li><div><Time /></div><p>Príchod 45 minút</p></li>
-              <li><div><Mask /></div><p>Denná lekárska kontrola majstra</p></li>
-            </div>
-            <div className="baner_form">
-            <Form
-              onFinish={onFinish}
-            >
-              <Form.Item
-                name="phone"
-                rules={[{ required: true, message: 'Please input your Phone!' }]}
-              >
-                <MaskedInput mask="+7 (111) 111-1111"  size="10" />
-              </Form.Item>
-              <Form.Item >
-                <Button type="primary" htmlType="submit">
-                Zavoláme vám späť do 5 minúty
-                </Button>
-              </Form.Item>
-            </Form>
-            </div>
-            <div className="recoll">
-                <p>Перезвоним в течение 1 минуты</p>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="advantages">
-      <div className="advantages_wrapper">
-        <div className="advantages_header">
-          <h1>Naše výhody</h1>
-        </div>
-        { window.innerWidth > 1025 ?
-        
-        <div className="grid_advantages_scroll">
-          <div className="go_left">
-            <div onClick={() => goLeft(carouselAdvantageRef)} >
-              <LeftOutlined />
-            </div>
-          </div>
-          <Carousel
-            ref={carouselAdvantageRef}
-            dots={false}
-            infinite={false}
-            speed={500}
-            slidesToShow={4}
-            slidesToScroll={2}
-            autoplay={false}>
-            { advantage.map((item, index) => 
-              (<div className="scrol_grid_item" key={index}>
-                { item.svg }
-                <div className="title">{item.title }</div>
-                <div className="text">{item.text}</div>
-              </div>)
-              )  
-            }
-          </Carousel>
-          <div className="go_right">
-            <div onClick={() => goRight(carouselAdvantageRef)} >
-              <RightOutlined />
-            </div>
-          </div>
-      </div>
-        : 
-        <div className="grid_advantages">
-          { 
-            advantage.map((item, index) => 
-            (<div className="grid_item" key={index}>
-              { item.svg }
-              <div className="title">{item.title }</div>
-              <div className="text">{item.text}</div>
-            </div>)
-            )  
-          }
-        </div>
-        }
-      </div>
-    </div>
-    <SiteContent {...props} setModalVisible={setModalVisible} />
-    <div className="service_reviews">
-      <div className="containr">
-        <div className="title">
-          <div className="main_title">
-            <h1>Hodnotenia zákazníkov</h1>
-          </div>
-          <div className="sub_title">
-            <p>на сайте { comments.length } отзывов</p>
-            <p>Recenzie sa objavujú s oneskorením 5-10 minút</p>
-          </div>
-        </div>
-        <div className="main_cntainer">
-          <div className="go_left">
-            <div onClick={() => goLeft(carouselRef)}>
-              <LeftOutlined />
-            </div>
-          </div>
-          <Carousel 
-            {...getCarouselSetting()}
-            ref={ carouselRef }
-            autoplay={false}>
-              {
-                comments.map((item, index) => (
-                  <div key={index} className='rewiev-slide'>
-                    <div className="side_body">
-                      <div className="main_inf">
-                        <div className="name">
-                          <h3>{ item.name }</h3>
-                        </div>
-                        <div className="date">
-                          <p>{ moment(item.date).format('DD MMMM YYYY') }</p>
-                        </div>
-                      </div>
-                      <div className="green_small_bar" ></div>
-                      <div className="side__rewiew">
-                        { item.text }
-                      </div>
-                    </div>
-                  </div>
-                )) 
-              }
-          </Carousel>
-          <div className="go_right">
-            <div onClick={() => goRight(carouselRef)}>
-              <RightOutlined />
-            </div>
-          </div>
-          <div className="second_review_controlers">
-            <div className="go_left_dub">
-              <div onClick={() => goRight(carouselRef)}>
-                <LeftOutlined />
-              </div>
-            </div>
-            <div className="go_right_dub">
-            <div onClick={() => goLeft(carouselRef)}>
-              <RightOutlined />
-            </div>
-          </div>
-          </div>
-        </div>
-        <div className="reviews_actions">
-          <Button onClick={() => setAddReviewVisible(true)} >Оставить отзыв</Button>
-          <Button>Смотреть все отзывы</Button>
-        </div>
-      </div>
-    </div>
+    <SiteContent {...restProps} 
+      setModalVisible={setModalVisible} 
+      onFinish={onFinish} 
+      goLeft={goLeft} 
+      goRight={goRight} 
+      advantage={advantage} 
+      carouselAdvantageRef={carouselAdvantageRef}
+      comments={comments}
+      setComents={setComents}
+      getCarouselSetting={getCarouselSetting}
+      carouselRef={carouselRef}
+      addReview={addReview}
+      setAddReviewVisible={setAddReviewVisible}
+      />
     <div className="calculate_price_modal">
       <Modal
         visible={visibleModal}
@@ -336,7 +185,7 @@ const Dashbord = (props) => {
                 name="phone"
                 rules={[{ required: true, message: 'Please input your Phone!' }]}
               >
-                <MaskedInput mask="+7 (111) 111-1111"  size="10" />
+                <MaskedInput mask="+421 (111) 111-111"  size="10" />
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">

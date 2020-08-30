@@ -6,6 +6,7 @@ import Zamena from './routes/zamena'
 import Razvodka from './routes/razvodka'
 import Svarochno from './routes/svarochnoSant'
 import Potechka from './routes/potechki'
+import Photo from './routes/workPhotos'
 
 const routes = [
   {
@@ -40,8 +41,8 @@ const routes = [
   },
   {
     exact: true,
-    path: 'photo',
-    component: () => <div>photo</div> 
+    path: 'photo-robot',
+    component: Photo
   },
 ];
 
