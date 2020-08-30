@@ -12,31 +12,31 @@ const { Panel } = Collapse;
 const phoneMenu = [
   {
     title: 'Сантехник по вызову',
-    href: '',
+    href: '/',
   },
   {
     title: 'Установка сантехники',
-    href: '',
+    href: 'ustanovka-santehniki',
   },
   {
     title: 'Замена сантехники',
-    href: '',
+    href: 'zamena-santehniki',
   },
   {
     title: 'Разводка труб',
-    href: '',
+    href: 'razvodka-trub',
   },
   {
     title: 'Сварочно сантехнические работы',
-    href: '',
+    href: 'svarochno-santehnicheskie-raboty',
   },
   {
     title: 'Устранение протечки трубы',
-    href: '',
+    href: 'ustranenie-protechek',
   },
   {
     title: 'Фото наших работ',
-    href: '',
+    href: 'photo-robot',
   },
 ]
 
@@ -75,7 +75,9 @@ function Header({ phone, history, location }) {
       </div>
       <div className="wrapper_header">
         <ul className="wrapper_header__container">
-        
+          {
+            phoneMenu.map(item => <Link to={item.href} >{item.title}</Link>)
+          }
         </ul>
       </div>
       <div className="phone_driver">
@@ -91,7 +93,7 @@ function Header({ phone, history, location }) {
             <div className="mobile_main_menu">
               {
                 phoneMenu.map((item, index ) => (
-                <li key={index} ><Link to={item.href}>{item.title}</Link></li>
+                <li key={index} ><Link onClick={ () => setVisible(false)} to={item.href}>{item.title}</Link></li>
                 ))
               }
             </div>

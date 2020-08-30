@@ -76,21 +76,26 @@ async function getComments(req, res) {
     if (limit && page) { 
       if ( size >= startedRequestItem ) {
         res.status(200).json({
-          responce: newList
+          responce: newList,
+          count: size
         })
       } else {
         res.status(200).json({
-          respnce: newList.slice(startedRequestItem, (size > endedRequestItem) )
+          respnce: newList.slice(startedRequestItem, (size > endedRequestItem)),
+          count: size
         })
       }
 
     } else if (limit && !page) {
       res.status(200).json({
-        respnce: newList.slice(0, limit)
+        respnce: newList.slice(0, limit),
+        count: size
+
       })
     } else {
       res.status(200).json({
-        respnce: newList
+        respnce: newList,
+        count: size
       })
     }
 

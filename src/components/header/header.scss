@@ -102,6 +102,28 @@ header {
       }
     }
   }
+  
+  .wrapper_header {
+    background-color: #fae348;
+    .wrapper_header__container {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      margin: 0 auto;
+      min-height: 60px;
+      max-width: 1000px;
+
+      a {
+        max-width: 90px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #343333;
+        font-size: 14px;
+        align-self: center;
+        padding-right: 10px;
+      }
+    }
+  } 
 
   .phone_driver {
     .ant-drawer-wrapper-body {
@@ -219,6 +241,9 @@ header {
           display: none;
         }
       }
+    }
+    .wrapper_header { 
+      display: none;
     }
   }
 }

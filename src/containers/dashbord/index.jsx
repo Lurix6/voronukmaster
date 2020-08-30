@@ -1,20 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect  } from 'react';
 import './style.scss';
 import Baner from '../../assets/img/baner.jpg'
 import Car from '../../assets/img/car.svg'
 import Time from '../../assets/img/time.svg'
 import Mask from '../../assets/img/mask.svg'
 import MaskedInput from 'antd-mask-input'
-import { Link } from 'react-router-dom'
 import { Form, Button, Input } from 'antd';
 import moment from 'moment'
 import { Carousel, Modal, notification  } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
 import MailCred from '../../helpers/emailCred/';
 import emailjs from 'emailjs-com';
-
 import Footer from '../../components/footer/';
-
 import Garant from '../../assets/svg/garant.svg'
 import Speed from '../../assets/svg/speed.svg'
 import Securety from '../../assets/svg/securety.svg'
@@ -23,19 +20,26 @@ import Return from '../../assets/svg/return.svg'
 import PayMent from '../../assets/svg/payment.svg'
 import Env from '../../assets/svg/env.svg'
 import Sale from '../../assets/svg/sale.svg'
-
-import Fignushki from '../../assets/img/fignushki.png'
-import Santehnik from '../../assets/img/santehnik.jpg'
-import Zasor from '../../assets/img/zasor.jpg'
-import Vanna from '../../assets/img/vanna.jpg'
-import Truba from '../../assets/img/truba.jpg'
-
+import SiteContent from './routes';
+import axios from 'axios';
 
 const Dashbord = (props) => {
   const carouselRef = useRef();
   const carouselAdvantageRef = useRef();
   const [visibleModal, setModalVisible] = useState(false);
   const [addReview, setAddReviewVisible] = useState(false);
+  const [comments, setComents] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://us-central1-stl-list.cloudfunctions.net/main/getComments',
+      );
+        setComents(result.data.respnce);
+    };
+ 
+    fetchData();
+  }, []);
 
   const openNotification = () => {
     notification.open({
@@ -45,10 +49,16 @@ const Dashbord = (props) => {
     });
   };
 
-  const onFinish = values => {
+  const addNewComment = async (data) => {
+    const res = await axios.post('https://us-central1-stl-list.cloudfunctions.net/main/createComment', data)
+    if( res.status === 200 ) {
+      setComents([...comments, {...data, date: moment()}])
+      setAddReviewVisible(false)
+    }
+  }
 
+  const onFinish = values => {
     values.message_html = `<a href={tel:${values.phone}}>${values.phone}</a>`
-    
     emailjs
     .send('gmail', MailCred.TEMPLATE_ID, values, MailCred.USER_ID)
     .then(
@@ -80,50 +90,23 @@ const Dashbord = (props) => {
 
   }
 
-  const review = [
-    {
-      name: 'Vadim',
-      date: moment(),
-      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
-    },
-    {
-      name: 'Vadim',
-      date: moment(),
-      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
-    },
-    {
-      name: 'Vadim',
-      date: moment(),
-      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
-    },
-    {
-      name: 'Vadim',
-      date: moment(),
-      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
-    },
-    {
-      name: 'Vadim',
-      date: moment(),
-      text: 'Благодарна компании,в частности,мастеру-Александру. Все выполнил,без занудства.Теперь все работает. Еще раз-СПАСИБО'
-    },
-  ]
-
   const advantage = [
     {
       svg: <Garant />,
-      title : 'Гарантия до 3 лет',
-      text: 'На все выполненные работы предоставляется гарантия сроком до 3 лет.'
+      title : 'Záruka až 3 roky',
+      text: 'Všetka vykonaná práca je zaručená na 3 roky.'
     },
     {
       svg: <Speed />,
-      title : 'Скорость',
-      text: 'Мастер приедет к Вам через 45 минут после обращения или в удобное для Вас время.'
+      title : 'Rýchlosť',
+      text: 'Majster k vám príde 45 minút po hovore alebo v čase, ktorý vám vyhovuje.'
     },
     {
       svg: <Securety />,
-      title : 'Безопасность',
-      text: 'Все мастера перед началом работы меряют температуру. Приезжают в масках и перчатках.'
+      title : 'Bezpečnosť',
+      text: 'Majster k vám príde 45 minút po hovore alebo v čase, ktorý vám vyhovuje.'
     },
+    /*
     {
       svg: <Reliability/>,
       title : 'Надежность',
@@ -134,59 +117,21 @@ const Dashbord = (props) => {
       title : 'Гарантия возврата денег',
       text: 'Если на заказе что-то пойдет не так, мы возместим сумму ущерба.'
     },
+    */
     {
       svg: <PayMent />,
-      title : 'Любая форма оплаты',
-      text: 'Вы можете произвести оплату любым удобным для себя способом.'
+      title : 'Akýkoľvek spôsob platby',
+      text: 'Môžete platiť akýmkoľvek spôsobom, ktorý je pre vás vhodný.'
     },
     {
       svg: <Env />,
-      title : 'Покупка и доставка комплектующих',
-      text: 'Мастер после диагностики определит, что необходимо докупить и сам поедет в магазин.'
+      title : 'Nákup a dodávka materiálu',
+      text: 'Po diagnostike určím, čo je potrebné kúpiť a sám pôjdem do obchodu a doveziem.'
     },
     {
       svg: <Sale />,
-      title : 'Скидки',
-      text: 'Для постоянных клиентов, а также для пенсионеров скидка 20% на все виды работ.'
-    },
-  ]
-
-  const services = [
-    {
-      img: <img src={Santehnik} />,
-      title: 'Услуги сантехника',
-      href: '',
-      price: 'От 250 руб.'
-    },
-    {
-      img: <img src={Zasor} />,
-      title: 'Устранение засоров',
-      href: '',
-      price: 'От 790 руб.'
-    },
-    {
-      img: <img src={Truba} />,
-      title: 'Устранение протечек',
-      href: '',
-      price: 'От 490 руб.'
-    },
-    {
-      img: <img src={Santehnik} />,
-      title: 'Ремонт сантехники',
-      href: '',
-      price: 'От 250 руб.'
-    },
-    {
-      img: <img src={Vanna} />,
-      title: 'Установка сантехники',
-      href: '',
-      price: 'От 590 руб.'
-    },
-    {
-      img: <img src={Fignushki} />,
-      title: 'Разводка труб',
-      href: '',
-      price: 'От 390 руб.'
+      title : 'Zľavy',
+      text: 'Pre stálych zákazníkov, ako aj pre dôchodcov, zľava 20% na všetky typy práce.'
     },
   ]
 
@@ -208,17 +153,17 @@ const Dashbord = (props) => {
         <div className="main_content__baner_grid">
           <div className="baner_header">
             <h1>
-              Сервис для вызова мастера
+              Zavolajte si odborníka už 
             </h1>
             <p className="price_text" >
-              от 250 рублей
+              od 20 eur
             </p>
           </div>
           <div className="baner_content">
             <div className="about_us">
-              <li><div><Car /></div><p>Бесплатный выезд</p></li>
-              <li><div><Time /></div><p>Приезд 45 минут</p></li>
-              <li><div><Mask /></div><p>Ежедневный мед.контроль мастеров</p></li>
+              <li><div><Car /></div><p>Obhliadka zadarmo</p></li>
+              <li><div><Time /></div><p>Príchod 45 minút</p></li>
+              <li><div><Mask /></div><p>Denná lekárska kontrola majstra</p></li>
             </div>
             <div className="baner_form">
             <Form
@@ -232,7 +177,7 @@ const Dashbord = (props) => {
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
-                Вызвать мастера
+                Zavoláme vám späť do 5 minúty
                 </Button>
               </Form.Item>
             </Form>
@@ -247,7 +192,7 @@ const Dashbord = (props) => {
     <div className="advantages">
       <div className="advantages_wrapper">
         <div className="advantages_header">
-          <h1>Наши преимущества</h1>
+          <h1>Naše výhody</h1>
         </div>
         { window.innerWidth > 1025 ?
         
@@ -295,42 +240,16 @@ const Dashbord = (props) => {
         }
       </div>
     </div>
-    <div className="base">
-      <div className="base_wrapper">
-        <div className="base_heder">
-          <h1>Цены на услуги</h1>
-        </div>
-        <div className="base_main_container">
-          {
-            services.map((item, index) => (
-              <div key={index} className="grid_item_wrapper">
-                <div className="grid_item">
-                  <div className="preview">
-                    { item.img }
-                    <h2><Link to={item.href}>{ item.title }</Link></h2>
-                  </div>
-                  <div className="price">
-                    <p>{ item.price }</p>
-                  </div>
-                  <div className="action">
-                    <Button onClick={() => setModalVisible(true)} >Рассчитать стоимость</Button>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
+    <SiteContent {...props} setModalVisible={setModalVisible} />
     <div className="service_reviews">
       <div className="containr">
         <div className="title">
           <div className="main_title">
-            <h1>Отзывы клиентов</h1>
+            <h1>Hodnotenia zákazníkov</h1>
           </div>
           <div className="sub_title">
-            <p>на сайте 1106 отзывов</p>
-            <p>Онлайн-отзывы появляются с задержкой в 5-10 минут</p>
+            <p>на сайте { comments.length } отзывов</p>
+            <p>Recenzie sa objavujú s oneskorením 5-10 minút</p>
           </div>
         </div>
         <div className="main_cntainer">
@@ -344,7 +263,7 @@ const Dashbord = (props) => {
             ref={ carouselRef }
             autoplay={false}>
               {
-                review.map((item, index) => (
+                comments.map((item, index) => (
                   <div key={index} className='rewiev-slide'>
                     <div className="side_body">
                       <div className="main_inf">
@@ -446,19 +365,19 @@ const Dashbord = (props) => {
           </div>
           <div className="body_content">
             <Form
-              onFinish={onFinish}
+              onFinish={addNewComment}
             >
               <Form.Item
                 name="name"
-                rules={[{ required: true, message: 'Please input your Phone!' }]}
+                rules={[{ required: true, message: 'Please input your Name!' }]}
               >
-                <Input />
+                <Input placeholder="Ваше имя" />
               </Form.Item>
               <Form.Item
-                name="name"
-                rules={[{ required: true, message: 'Please input your Phone!' }]}
+                name="text"
+                rules={[{ required: true, message: 'Please input your Text!' }]}
               >
-                <Input.TextArea size="10" />
+                <Input.TextArea placeholder="Ваш текст"  rows="5" />
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
