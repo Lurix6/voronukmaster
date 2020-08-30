@@ -204,7 +204,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
                     <p>{ item.price }</p>
                   </div>
                   <div className="action">
-                    <Button onClick={() => setModalVisible(true)} >Рассчитать стоимость</Button>
+                    <Button onClick={() => setModalVisible(true)} >Vypočítať náklady</Button>
                   </div>
                 </div>
               </div>

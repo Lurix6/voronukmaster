@@ -26,19 +26,9 @@ const Footer = ({ openModal }) => {
                 </div>
                 <div className="item_data">
                   <p>
-                    +7 (499) 110-74-82
-                  </p>
-                </div>
-              </div>
-              <div className="contact_item">
-                <div className="item_title">
-                  <p>
-                    Физический адрес:
-                  </p>
-                </div>
-                <div className="item_data">
-                  <p>
-                    ул. Ленинский проспект 111
+                  <a href="tel:+421940136362">
+                    +421940136-362
+                  </a>
                   </p>
                 </div>
               </div>
@@ -50,7 +40,9 @@ const Footer = ({ openModal }) => {
                 </div>
                 <div className="item_data">
                   <p>
-                    support@santehnik-home.ru
+                    <a href="mailto:kurenarvodarba@gmail.com">
+                      kurenarvodarba@gmail.com
+                    </a>
                   </p>
                 </div>
               </div>
@@ -67,8 +59,8 @@ const Footer = ({ openModal }) => {
             </div>
             <div className="contact_us">
               <div className="call_us_phone">
-                <a href="tel:+7 (499) 288-86-09">
-                  +7 (499) 288-86-09
+                <a href="tel:421940136362">
+                  +421 (940) 136-362
                 </a>
               </div>
               <p>Звоните, работаем без выходных!</p>

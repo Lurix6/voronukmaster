@@ -168,7 +168,7 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
           <div className="title">
             <Sale />
             <p>
-              Рассчитать стоимость
+              Vypočítať náklady
             </p>
           </div>
           <div className="body_content">
