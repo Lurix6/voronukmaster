@@ -62,27 +62,27 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F10.jpg?alt=media&token=a1e4b33d-1488-40bf-8c04-a189d4ea13f3" />,
+      title: 'Установка сололифта',
+      price: 'От 1990 руб.'
+    },
+    {
+      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F11.jpg?alt=media&token=014e52c3-1753-4c9f-aaf6-379abe085a11" />,
       title: 'Установка душевой кабины с гидромассажем',
       price: 'От 2990 руб.'
     },
     {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F11.jpg?alt=media&token=014e52c3-1753-4c9f-aaf6-379abe085a11" />,
+      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F12.jpg?alt=media&token=1b58bea6-6d6c-4ab8-8852-8202a8d03a5d" />,
       title: 'Установка смесителя',
       price: 'От 590 руб.'
     },
     {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F12.jpg?alt=media&token=1b58bea6-6d6c-4ab8-8852-8202a8d03a5d" />,
-      title: 'Установка подвесного унитаза',
-      price: 'От 1450 руб.'
-    },
-    {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F13.jpg?alt=media&token=971701b7-b9a4-4b93-acf8-a645b207c389" />,
-      title: 'Установка инсталляции ',
-      price: 'От 1990 руб.'
+      title: 'Установка подвесного унитаза',
+      price: 'От 1490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F14.jpg?alt=media&token=7123bf4b-f9dc-4a56-871c-8a6c45e4a1e4" />,
-      title: 'Установка полотенцесушителя',
+      title: 'Установка инсталляции ',
       price: 'От 1990 руб.'
     },
   ]

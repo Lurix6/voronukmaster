@@ -52,18 +52,18 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/svarka%2F8.jpg?alt=media&token=47441636-ad32-4e35-9e4c-cec0521254e3" />,
-      title: 'Замена арматуры бачка',
+      title: 'Ремонт инсталляции унитаза',
       price: 'От 490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/svarka%2F9.jpg?alt=media&token=23924073-3fbf-4142-978c-3282021d89a1" />,
-      title: 'Замена гибкой подводки',
-      price: 'От 290 руб.'
+      title: 'Ремонт крана',
+      price: 'От 490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/svarka%2F10.jpg?alt=media&token=ab71b228-7840-451e-9d30-973e7cf56c3d" />,
-      title: 'Замена раковины',
-      price: 'От 990 руб.'
+      title: 'Ремонт бачка инсталляции',
+      price: 'От 490 руб.'
     },
   ]
   return(
