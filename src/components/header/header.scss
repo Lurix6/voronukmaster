@@ -1,8 +1,12 @@
 header {
+  &:first-child {
+    background-color: black;
+  }
   .main_wrapper {
     max-width: 1000px;
     margin: 0 auto;
     padding: 5px 15px;
+    background-color: black;
     
     .main_wrapper__contant {
       display: flex;
@@ -14,6 +18,7 @@ header {
         svg {
           font-size: 50px;
           height: 25px;
+          fill: blanchedalmond;
         }
       }
 
@@ -79,11 +84,11 @@ header {
             padding-left: 15px;
             padding-right: 15px;
             white-space: nowrap;
-            color: #222223 !important;
+            color: #eee !important;
             font-size: 18px;
             font-weight: 900;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.1s;
           }
 
           button {
@@ -238,8 +243,8 @@ header {
         
         .main_logo {
           img {
-            width: 150px;
-            height: 60px;
+            width: 180px;
+            height: 80px;
           }
         }
         .short_mewnu {

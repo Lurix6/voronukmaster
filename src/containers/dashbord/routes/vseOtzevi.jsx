@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './vseOtveti.scss'
 import moment from 'moment'
 
 export default ({comments, ...othherProps}) => {
+
+  useEffect(() => {
+    document.querySelector('.scrollBox').scrollTo(0, 0);
+  }, []);
 
   return(
     <div className="vse_otzivi">

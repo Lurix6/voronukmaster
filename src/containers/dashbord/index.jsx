@@ -174,7 +174,7 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
           <div className="body_content">
             <div className="text_container">
               <p>
-                Оставьте, пожалуйста, свой номер телефона, и наш специалист перезвонит Вам, чтобы <span class="text-yellow">сориентировать</span> по стоимости работ.
+                Prosím, napíšte svoje telefónne číslo a náš špecialista vám <span class="text-yellow">zavolá</span> späť, aby vám poradil.
               </p>
             </div>
             <div className="call_back_form">

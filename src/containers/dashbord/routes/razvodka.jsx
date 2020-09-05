@@ -17,43 +17,43 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
     const services = [
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F1.jpg?alt=media&token=04f84c17-d3f4-4640-bb33-8c76c9ed4777" />,
-      title: 'Монтаж железных труб',
-      price: 'От 490 руб.'
+      title: 'Montaž polypropylénovych rúr',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F2.jpg?alt=media&token=12b73b71-bbed-487b-97aa-d0dada8f7597" />,
-      title: 'Монтаж металлопластиковых труб',
-      price: 'От 490 руб.'
+      title: 'Inštalácia plastohliníkovych rúr',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F3.jpg?alt=media&token=4b59cf39-9010-408f-8071-ffddc3949d05" />,
-      title: 'Монтаж железных труб',
-      price: 'От 490 руб.'
+      title: 'Inštalácia železných rúr',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F4.jpeg?alt=media&token=ab9354e2-e752-43ab-8fe0-fe062b632e27" />,
-      title: 'Монтаж канализационных труб',
-      price: 'От 490 руб.'
+      title: 'Inštalácia kanalizačného potrubia',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F5.jpg?alt=media&token=073916ad-beff-410e-9012-1c596b7c8632" />,
-      title: 'Монтаж труб Рехау',
-      price: 'От 990 руб.'
+      title: 'Inštalácia potrubí Rehau',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F6.jpg?alt=media&token=ed2ade4e-35cd-4fed-aa26-813c1e3ae868" />,
-      title: 'Монтаж медных труб',
-      price: 'От 990 руб.'
+      title: 'Inštalácia medených rúr',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F7.jpg?alt=media&token=e4728e92-f5a9-4d62-b52c-4fe61f43ebe4" />,
-      title: 'Монтаж труб в квартире',
-      price: 'От 790 руб.'
+      title: 'Inštalácia potrubí v byte',
+      price: 'Od 25€'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F8.jpg?alt=media&token=f05878ab-ae3e-46e5-afbd-2fe57c7bc4b6" />,
-      title: 'Монтаж труб в доме',
-      price: 'От 1990 руб.'
+      title: 'Inštalácia potrubí v dome',
+      price: 'Od 25€'
     }
   ]
   return(

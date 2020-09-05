@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Fignushki from '../../../assets/img/fignushki.png'
-import Santehnik from '../../../assets/img/santehnik.jpg'
-import Zasor from '../../../assets/img/zasor.jpg'
-import Truba from '../../../assets/img/truba.jpg'
 import Baner from '../../../assets/img/baner.jpg'
 import Car from '../../../assets/img/car.svg'
 import Time from '../../../assets/img/time.svg'
 import Mask from '../../../assets/img/mask.svg'
-import { Form, Button, Input, Carousel } from 'antd';
+import { Form, Button, Carousel } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
 import MaskedInput from 'antd-mask-input'
 import moment from 'moment'
@@ -17,54 +13,49 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
   const services = [
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F1.jpg?alt=media&token=ba0fef57-570d-404a-8093-55b062a905e7" />,
-      title: 'Протечка стиральной машины',
+      title: 'Únik vody z práčky',
       price: 'От 790 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F2.jpg?alt=media&token=22c0ea5f-63dd-4a2c-971c-c0ffe3539a8c" />,
-      title: 'Устранение протечки под ванной',
+      title: 'Odstránenie netesností pod vaňou',
       price: 'От 990 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F3.jpg?alt=media&token=6affe66a-2cb6-4089-b4b6-5368c67497be" />,
-      title: 'Устранение протечки труб',
+      title: 'Eliminácia netesností potrubia',
       price: 'От 990 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F4.jpg?alt=media&token=3bfcbe8c-a4f0-40dc-a6d6-c2e04441383f" />,
-      title: 'Устранение протечки смесителя',
+      title: 'Eliminácia úniku z umývadlovej batérie',
       price: 'От 490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F5.jpg?alt=media&token=44fb1258-1ee5-4ec5-b5e8-59d33526fab6" />,
-      title: 'Устранение протечки душевой кабины',
+      title: 'Eliminácia úniku sprchy',
       price: 'От 1490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F6.png?alt=media&token=75dc7ec0-c31e-4841-a0bb-e7605591bc11" />,
-      title: 'Устранение протечки унитаза',
+      title: 'Eliminácia úniku toalety',
       price: 'От 490 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F7.png?alt=media&token=c537229e-8ec0-43b6-9e37-158e1c7fc1b0" />,
-      title: 'Устранение протечки инсталляции',
+      title: 'Odstránenie úniku z inštalácie',
       price: 'От 990 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F8.jpg?alt=media&token=82df0f86-301d-4cea-9f4e-949aa5f18651" />,
-      title: 'Устранение протечки сифона',
+      title: 'Eliminácia úniku sifónu',
       price: 'От 990 руб.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />,
-      title: 'Устранение протечки системы отопления',
+      title: 'Odstránenie úniku vykurovacieho systému',
       price: 'От 990 руб.'
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F11.jpg?alt=media&token=66053659-37b9-4f8d-a3b4-66d6ba5cca68" />,
-      title: 'Устранение протечки системы отопления',
-      price: 'От 990 руб.'
-    }  
+    } 
   ]
   return(
     <>

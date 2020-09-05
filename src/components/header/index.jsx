@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './header';
 import { Button, Drawer, Collapse } from 'antd';
-import Logo from '../../assets/img/main_logoblack.png'
+import Logo from '../../assets/img/main_logo2.png'
 import { Link } from 'react-router-dom';
 import {FieldTimeOutlined} from '@ant-design/icons';
 import { MailOutlined, PhoneFilled, MenuOutlined }  from '@ant-design/icons';
@@ -10,23 +10,23 @@ const { Panel } = Collapse;
 
 const phoneMenu = [
   {
-    title: 'Сантехник по вызову',
+    title: 'Inštalatér na zavolanie',
     href: '/',
   },
   {
-    title: 'Установка сантехники',
+    title: 'Inštalatérske práce',
     href: 'ustanovka-santehniki',
   },
   {
-    title: 'Замена сантехники',
+    title: 'Výmena sanity',
     href: 'zamena-santehniki',
   },
   {
-    title: 'Разводка труб',
+    title: 'Montáž potrubia',
     href: 'razvodka-trub',
   },
   {
-    title: 'Устранение протечки трубы',
+    title: 'Eliminácia netesností potrubia',
     href: 'ustranenie-protechek',
   },
   {
@@ -40,36 +40,39 @@ function Header({ setModalVisible, phone, history, location }) {
 
   return (
     <header>
-      <div className="main_wrapper">
-        <div className="main_wrapper__contant">
-          <div className="main_wrapper_phone_togle" >
-            <MenuOutlined onClick={() => setVisible(true)} />
-          </div>
-          <div className="main_logo">
-            <Link to='/' >
-              <img src={Logo} />
-            </Link>
-          </div>
-          <div className="short_mewnu">
-            <div className="work_time">
-              <FieldTimeOutlined />
-              <p>Every day 24/7</p>
+      <div>
+        <div className="main_wrapper">
+          <div className="main_wrapper__contant">
+            <div className="main_wrapper_phone_togle" >
+              <MenuOutlined onClick={() => setVisible(true)} />
             </div>
-          </div>
-          <div className="contact_box">
-            <div className="content_box__left">
-              Bratislava 
+            <div className="main_logo">
+              <Link to='/' >
+                <img src={Logo} />
+              </Link>
             </div>
-            <div className="content_box__right">
-              <a href="tel:+421940136362">+421 (940) 136-362</a>
-              <Button onClick={() => setModalVisible(true)}>
-                Оформить заказ
-              </Button>
+            <div className="short_mewnu">
+              <div className="work_time">
+                <FieldTimeOutlined />
+                <p>Every day 24/7</p>
+              </div>
             </div>
+            <div className="contact_box">
+              <div className="content_box__left">
+                Bratislava 
+              </div>
+              <div className="content_box__right">
+                <a href="tel:+421940136362">+421 (940) 136-362</a>
+                <Button onClick={() => setModalVisible(true)}>
+                  Оформить заказ
+                </Button>
+              </div>
+            </div>
+            <a className="phone_phone" href="tel:+421940136362"></a>
           </div>
-          <a className="phone_phone" href="tel:+421940136362"></a>
         </div>
       </div>
+     
       <div className="wrapper_header">
         <ul className="wrapper_header__container">
           {
