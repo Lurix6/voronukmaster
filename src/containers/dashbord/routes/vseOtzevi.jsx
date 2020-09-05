@@ -1,25 +1,31 @@
 import React from 'react';
+import './vseOtveti.scss'
+import moment from 'moment'
 
-export default ({...othherProps}) => {
-
-  const photos = [{
-    img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-  }]
+export default ({comments, ...othherProps}) => {
 
   return(
     <div className="vse_otzivi">
         
       <div className="base_wrapper">
         <div className="base_heder">
-          <h1>Наши работи</h1>
+          <h1>Ваши ответи</h1>
         </div>
         <div className="base_main_container">
           {
-            photos.map((item, index) => (
+            comments.map((item, index) => (
               <div key={index} className="grid_item_wrapper">
                 <div className="grid_item">
-                  <div className="preview">
-                    { item.img }
+                  <div className="grid_item__header">
+                    <p>
+                      { item.name }
+                    </p>
+                    <p>
+                      { moment(item.date).format('DD MMMM YYYY') }
+                    </p>
+                  </div>
+                  <div className="grid_item__text">
+                    {item.text}
                   </div>
                 </div>
               </div>

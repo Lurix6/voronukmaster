@@ -350,6 +350,10 @@
         .main_title {
           text-align: center;
           margin-bottom: 20px;
+
+          h1 {
+            line-height: 1;
+          }
         }
         .sub_title {
           text-align: center;
@@ -839,9 +843,13 @@
           }
 
           .go_left_dub {
-
             margin-right: 20px;
           }
+        }
+      }
+      .reviews_actions {
+        .ant-btn {
+          margin-left: 0 !important;
         }
       }
     }

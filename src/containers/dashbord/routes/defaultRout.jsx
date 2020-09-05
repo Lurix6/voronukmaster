@@ -8,6 +8,7 @@ import Baner from '../../../assets/img/baner.jpg'
 import Car from '../../../assets/img/car.svg'
 import Time from '../../../assets/img/time.svg'
 import Mask from '../../../assets/img/mask.svg'
+import Pensione1 from '../../../assets/img/pensioner'
 import { Form, Button, Input, Carousel } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
 import MaskedInput from 'antd-mask-input'

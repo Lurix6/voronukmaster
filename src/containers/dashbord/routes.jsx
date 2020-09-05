@@ -7,6 +7,7 @@ import Razvodka from './routes/razvodka'
 import Svarochno from './routes/svarochnoSant'
 import Potechka from './routes/potechki'
 import Photo from './routes/workPhotos'
+import VseOtveti from './routes/vseOtzevi'
 
 const routes = [
   {
@@ -29,11 +30,7 @@ const routes = [
     path: 'razvodka-trub',
     component: Razvodka 
   },
-  {
-    exact: true,
-    path: 'svarochno-santehnicheskie-raboty',
-    component: Svarochno
-  },
+
   {
     exact: true,
     path: 'ustranenie-protechek',
@@ -44,6 +41,11 @@ const routes = [
     path: 'photo-robot',
     component: Photo
   },
+  {
+    exact: true,
+    path: 'vse-otzivi',
+    component: VseOtveti
+  }
 ];
 
 export default function AppRouter(props) {

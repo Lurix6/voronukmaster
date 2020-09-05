@@ -1,9 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Fignushki from '../../../assets/img/fignushki.png'
-import Santehnik from '../../../assets/img/santehnik.jpg'
-import Zasor from '../../../assets/img/zasor.jpg'
-import Truba from '../../../assets/img/truba.jpg'
 import Baner from '../../../assets/img/baner.jpg'
 import Car from '../../../assets/img/car.svg'
 import Time from '../../../assets/img/time.svg'

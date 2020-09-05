@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './header';
 import { Button, Drawer, Collapse } from 'antd';
-import Logo from '../../assets/img/main_logo.png'
+import Logo from '../../assets/img/main_logoblack.png'
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
 import {FieldTimeOutlined} from '@ant-design/icons';
 import { MailOutlined, PhoneFilled, MenuOutlined }  from '@ant-design/icons';
 
@@ -27,10 +26,6 @@ const phoneMenu = [
     href: 'razvodka-trub',
   },
   {
-    title: 'Сварочно сантехнические работы',
-    href: 'svarochno-santehnicheskie-raboty',
-  },
-  {
     title: 'Устранение протечки трубы',
     href: 'ustranenie-protechek',
   },
@@ -51,7 +46,9 @@ function Header({ setModalVisible, phone, history, location }) {
             <MenuOutlined onClick={() => setVisible(true)} />
           </div>
           <div className="main_logo">
-            <img src={Logo} />
+            <Link to='/' >
+              <img src={Logo} />
+            </Link>
           </div>
           <div className="short_mewnu">
             <div className="work_time">

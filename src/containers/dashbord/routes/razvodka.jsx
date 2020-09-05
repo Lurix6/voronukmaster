@@ -36,7 +36,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
       price: 'От 490 руб.'
     },
     {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F4.jpeg?alt=media&token=ab9354e2-e752-43ab-8fe0-fe062b632e27" />,
+      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/razvodka_trub%2F5.jpg?alt=media&token=073916ad-beff-410e-9012-1c596b7c8632" />,
       title: 'Монтаж труб Рехау',
       price: 'От 990 руб.'
     },

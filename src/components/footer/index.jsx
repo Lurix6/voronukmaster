@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd'
 import './style.scss';
-import Logo from '../../assets/img/main_logo.png'
-import VK from '../../assets/svg/vk.svg'
+import Logo from '../../assets/img/main_logoblack.png'
 import FB from '../../assets/svg/fb.svg'
 import IN from '../../assets/svg/in.svg'
 
@@ -15,7 +14,9 @@ const Footer = ({ openModal }) => {
         <div className="footer_contact">
           <div className="left_block">
             <div className="img_wrapper">
-              <img src={Logo} alt=""/>
+              <Link to="/">
+                <img src={Logo} alt=""/>              
+              </Link>
             </div>
             <div className="contact_item_list">
               <div className="contact_item">
