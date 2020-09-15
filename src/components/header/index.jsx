@@ -100,10 +100,7 @@ function Header({ setModalVisible, phone, history, location }) {
             <div className="mobile_menu_footer">
               <div className="mobile_sub_menu">
                 <li>
-                  <a href="#service_reviews">Отзывы</a>
-                </li>
-                <li>
-                  <a href="">Вопрос-ответ</a>
+                  <Link to="/vse-otzivi" >Отзывы</Link>
                 </li>
               </div>
               <div className="mobile_call_data">

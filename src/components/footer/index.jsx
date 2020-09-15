@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd'
 import './style.scss';
-import Logo from '../../assets/img/main_logoblack.png'
+import Logo from '../../assets/img/main_logo2.png'
 import FB from '../../assets/svg/fb.svg'
 import IN from '../../assets/svg/in.svg'
 

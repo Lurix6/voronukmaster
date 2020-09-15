@@ -28,7 +28,7 @@ header {
 
         img {
           width: 200px;
-          height: 70px;
+          height: 100px;
         }
       }
       .short_mewnu {
@@ -79,6 +79,7 @@ header {
         .content_box__right {
           display: flex;
           flex-direction: column;
+          justify-content: center;
 
           a {
             padding-left: 15px;
@@ -89,6 +90,7 @@ header {
             font-weight: 900;
             text-decoration: none;
             transition: all 0.1s;
+            margin-bottom: 10px;
           }
 
           button {
@@ -205,14 +207,41 @@ header {
 
 }
 
+
+@media screen and (max-width: 990px) {
+  header {
+    .main_wrapper {
+      .main_wrapper__contant {
+
+        .main_wrapper_phone_togle {
+          display: block !important;
+        }
+        
+        .main_logo {
+          img {
+            width: 180px;
+            height:90px;
+          }
+        }
+        .short_mewnu {
+          display: none;
+        }
+      }
+    }
+    .wrapper_header { 
+      display: none;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   header {
     .main_wrapper {
       .main_wrapper__contant {
         .main_logo {
           img {
-            width: 150px;
-            height: 50px;
+            width: 190px;
+            height: 90px;
           }
         }
         .short_mewnu {
@@ -228,32 +257,6 @@ header {
 
         }
       }
-    }
-  }
-}
-
-@media screen and (max-width: 990px) {
-  header {
-    .main_wrapper {
-      .main_wrapper__contant {
-
-        .main_wrapper_phone_togle {
-          display: block !important;
-        }
-        
-        .main_logo {
-          img {
-            width: 180px;
-            height: 80px;
-          }
-        }
-        .short_mewnu {
-          display: none;
-        }
-      }
-    }
-    .wrapper_header { 
-      display: none;
     }
   }
 }
