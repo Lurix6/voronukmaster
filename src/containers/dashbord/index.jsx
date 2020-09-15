@@ -183,13 +183,13 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
             >
               <Form.Item
                 name="phone"
-                rules={[{ required: true, message: 'Please input your Phone!' }]}
+                rules={[{ required: true, message: 'Zadajte svoje číslo!' }]}
               >
                 <MaskedInput mask="+421 (111) 111-111"  size="10" />
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
-                  Заказать звонок
+                  Vyžiadajte si hovor
                 </Button>
               </Form.Item>
             </Form>
@@ -230,7 +230,7 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
-                  Оставить отзыв
+                  Zanechať recenziu
                 </Button>
               </Form.Item>
             </Form>

@@ -82,19 +82,19 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
           >
             <Form.Item
               name="phone"
-              rules={[{ required: true, message: 'Please input your Phone!' }]}
+              rules={[{ required: true, message: 'Zadajte svoje číslo!' }]}
             >
                 <MaskedInput mask="+421 (111) 111-111"  size="10" />
             </Form.Item>
             <Form.Item >
               <Button type="primary" htmlType="submit">
-              Zavoláme vám späť do 5 minúty
+                Vyžiadajte si hovor
               </Button>
             </Form.Item>
           </Form>
           </div>
           <div className="recoll">
-              <p>Перезвоним в течение 1 минуты</p>
+              <p>Zavoláme vám späť do 5 minút</p>
             </div>
         </div>
       </div>
@@ -185,7 +185,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
             <h1>Hodnotenia zákazníkov</h1>
           </div>
           <div className="sub_title">
-            <p>на сайте { comments.length } отзывов</p>
+            <p>Na stránke { comments.length } recenzií</p>
             <p>Recenzie sa objavujú s oneskorením 5-10 minút</p>
           </div>
         </div>
@@ -208,7 +208,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
                           <h3>{ item.name }</h3>
                         </div>
                         <div className="date">
-                          <p>{ moment(item.date).format('DD MMMM YYYY') }</p>
+                          <p>{ moment(item.date._seconds).format('DD MMMM YYYY') }</p>
                         </div>
                       </div>
                       <div className="green_small_bar" ></div>
@@ -239,8 +239,8 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
           </div>
         </div>
         <div className="reviews_actions">
-          <Button onClick={() => setAddReviewVisible(true)} >Оставить отзыв</Button>
-          <Link to="vse-otzivi"><Button>Смотреть все отзывы</Button></Link>
+          <Button onClick={() => setAddReviewVisible(true)} >Zanechať recenziu</Button>
+          <Link to="vse-otzivi"><Button>Zobraziť všetky recenzie</Button></Link>
         </div>
       </div>
     </div>

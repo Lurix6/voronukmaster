@@ -10,10 +10,9 @@ export default ({comments, ...othherProps}) => {
 
   return(
     <div className="vse_otzivi">
-        
       <div className="base_wrapper">
         <div className="base_heder">
-          <h1>Ваши ответи</h1>
+          <h1>Váše odpovede</h1>
         </div>
         <div className="base_main_container">
           {
@@ -25,7 +24,7 @@ export default ({comments, ...othherProps}) => {
                       { item.name }
                     </p>
                     <p>
-                      { moment(item.date).format('DD MMMM YYYY') }
+                      {  moment(item.date._seconds).format('DD MMMM YYYY') }
                     </p>
                   </div>
                   <div className="grid_item__text">

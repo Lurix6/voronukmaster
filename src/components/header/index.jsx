@@ -30,13 +30,18 @@ const phoneMenu = [
     href: 'ustranenie-protechek',
   },
   {
-    title: 'Фото наших работ',
+    title: 'Fotografie našich prác',
     href: 'photo-robot',
   },
 ]
 
 function Header({ setModalVisible, phone, history, location }) {
   const [visible, setVisible] = useState(false);
+
+  const scrollToContent = () => {
+    const basse_wrapper = document.querySelector('.base_heder')?.getBoundingClientRect()
+    window.scrollTo({ behavior: 'smooth', top: basse_wrapper?.top })
+  }
 
   return (
     <header>
@@ -54,7 +59,7 @@ function Header({ setModalVisible, phone, history, location }) {
             <div className="short_mewnu">
               <div className="work_time">
                 <FieldTimeOutlined />
-                <p>Every day 24/7</p>
+                <p>Každý deň 24/7</p>
               </div>
             </div>
             <div className="contact_box">
@@ -64,7 +69,7 @@ function Header({ setModalVisible, phone, history, location }) {
               <div className="content_box__right">
                 <a href="tel:+421940136362">+421 (940) 136-362</a>
                 <Button onClick={() => setModalVisible(true)}>
-                  Оформить заказ
+                  Objednať
                 </Button>
               </div>
             </div>
@@ -76,13 +81,13 @@ function Header({ setModalVisible, phone, history, location }) {
       <div className="wrapper_header">
         <ul className="wrapper_header__container">
           {
-            phoneMenu.map(item => <Link to={item.href} >{item.title}</Link>)
+            phoneMenu.map(item => <Link to={item.href} onClick={scrollToContent} >{item.title}</Link>)
           }
         </ul>
       </div>
       <div className="phone_driver">
         <Drawer
-            title={<p> Ewery day 24/7  </p>}
+            title={<p>Každý deň 24/7</p>}
             placement={'left'}
             closable={false}
             onClose={() => setVisible(false)}
@@ -93,14 +98,16 @@ function Header({ setModalVisible, phone, history, location }) {
             <div className="mobile_main_menu">
               {
                 phoneMenu.map((item, index ) => (
-                <li key={index} ><Link onClick={ () => setVisible(false)} to={item.href}>{item.title}</Link></li>
+                <li key={index} ><Link onClick={ () => {
+                  setVisible(false), scrollToContent()
+                }} to={item.href}>{item.title}</Link></li>
                 ))
               }
             </div>
             <div className="mobile_menu_footer">
               <div className="mobile_sub_menu">
                 <li>
-                  <Link to="/vse-otzivi" >Отзывы</Link>
+                  <Link to="/vse-otzivi" >Recenzie</Link>
                 </li>
               </div>
               <div className="mobile_call_data">

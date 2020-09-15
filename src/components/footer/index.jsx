@@ -22,7 +22,7 @@ const Footer = ({ openModal }) => {
               <div className="contact_item">
                 <div className="item_title">
                   <p>
-                    Телефон:
+                    Telefón:
                   </p>
                 </div>
                 <div className="item_data">
@@ -36,7 +36,7 @@ const Footer = ({ openModal }) => {
               <div className="contact_item">
                 <div className="item_title">
                   <p>
-                    E-mail адрес:
+                    Emailová adresa:
                   </p>
                 </div>
                 <div className="item_data">
@@ -64,16 +64,16 @@ const Footer = ({ openModal }) => {
                   +421 (940) 136-362
                 </a>
               </div>
-              <p>Звоните, работаем без выходных!</p>
-              <Button onClick={openModal} >Оставить заявку</Button>
+              <p>Zavolajte nám, pracujeme sedem dní v týždni!</p>
+                <div>
+                  <Button onClick={openModal} >Podať svoju žiadosť</Button>
+                </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="hor_bar" />
       <div className="fotter_sub">
         <div className="futer_sub_container">
-          <p>© 2020 Центр бытовых услуг</p>
         </div>
       </div>
     </div>

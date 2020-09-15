@@ -36,14 +36,14 @@ header {
         align-items: center;
         .work_time {
           display: flex;
-          border: 2px solid #a6a6a6;
+          border: 2px solid #fae348;
           border-radius: 20px;
           span {
             display: flex;
             align-items: center;
 
             svg {
-              color: #a6a6a6;
+              color: #fae348;
               width: 30px;
               height: 30px;
             }
@@ -54,7 +54,7 @@ header {
             line-height: 28px;
             font-weight: 600;
             padding: px 0;
-            color: #a6a6a6;
+            color: #fae348;
             font-size: 16px;
             margin: 0 10px;
           }
@@ -68,7 +68,7 @@ header {
           align-items: center;
           position: relative;
           font-size: 17px;
-          color: #057888;
+          color: #fae348;
           text-transform: none;
           font-weight: 600;
           cursor: pointer;
@@ -85,7 +85,7 @@ header {
             padding-left: 15px;
             padding-right: 15px;
             white-space: nowrap;
-            color: #eee !important;
+            color: #fae348 !important;
             font-size: 18px;
             font-weight: 900;
             text-decoration: none;
@@ -95,10 +95,9 @@ header {
 
           button {
             padding: 0 16px 2px;
-            border: 1px solid #009cb1;
             border-radius: 25px;
-            color: #fff;
-            background-color: #009cb1;
+            color: black;
+            background-color: #fae348;
             font-family: "Museo Sans",Helvetica,Arial,sans-serif;
             font-size: 19px;
           }

@@ -142,7 +142,6 @@
       }
     }
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -169,14 +168,21 @@
         }
 
         .right_block {
-          flex-direction: column;
+          flex-direction: column !important;
           .social_media {
             flex-direction: row !important;
             margin: 20px 0;
           }
           .contact_us {
+            margin: 0 !important;
             .call_us_phone {
               margin-bottom: 20px;
+            }
+
+            div {
+              display: flex;
+              justify-content: center;
+              margin-bottom: 10px;
             }
           }
         }

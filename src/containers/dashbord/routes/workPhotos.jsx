@@ -44,9 +44,6 @@ export default ({...othherProps}) => {
   return(
     <div className="base">
       <div className="base_wrapper">
-        <div className="base_heder">
-          <h1>Наши работи</h1>
-        </div>
         <div className="base_main_container">
           {
             photos.map((item, index) => (

@@ -14,47 +14,47 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F1.jpg?alt=media&token=ba0fef57-570d-404a-8093-55b062a905e7" />,
       title: 'Únik vody z práčky',
-      price: 'От 790 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F2.jpg?alt=media&token=22c0ea5f-63dd-4a2c-971c-c0ffe3539a8c" />,
       title: 'Odstránenie netesností pod vaňou',
-      price: 'От 990 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F3.jpg?alt=media&token=6affe66a-2cb6-4089-b4b6-5368c67497be" />,
       title: 'Eliminácia netesností potrubia',
-      price: 'От 990 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F4.jpg?alt=media&token=3bfcbe8c-a4f0-40dc-a6d6-c2e04441383f" />,
       title: 'Eliminácia úniku z umývadlovej batérie',
-      price: 'От 490 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F5.jpg?alt=media&token=44fb1258-1ee5-4ec5-b5e8-59d33526fab6" />,
       title: 'Eliminácia úniku sprchy',
-      price: 'От 1490 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F6.png?alt=media&token=75dc7ec0-c31e-4841-a0bb-e7605591bc11" />,
       title: 'Eliminácia úniku toalety',
-      price: 'От 490 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F7.png?alt=media&token=c537229e-8ec0-43b6-9e37-158e1c7fc1b0" />,
       title: 'Odstránenie úniku z inštalácie',
-      price: 'От 990 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F8.jpg?alt=media&token=82df0f86-301d-4cea-9f4e-949aa5f18651" />,
       title: 'Eliminácia úniku sifónu',
-      price: 'От 990 руб.'
+      price: 'Od 20 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />,
       title: 'Odstránenie úniku vykurovacieho systému',
-      price: 'От 990 руб.'
+      price: 'Od 20 eur.'
     } 
   ]
   return(
@@ -83,19 +83,19 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
             >
               <Form.Item
                 name="phone"
-                rules={[{ required: true, message: 'Please input your Phone!' }]}
+                rules={[{ required: true, message: 'Zadajte svoje číslo!' }]}
               >
                 <MaskedInput mask="+421 (111) 111-111"  size="10" />
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
-                Zavoláme vám späť do 5 minúty
+                  Vyžiadajte si hovor
                 </Button>
               </Form.Item>
             </Form>
             </div>
             <div className="recoll">
-                <p>Перезвоним в течение 1 минуты</p>
+                <p>Zavoláme vám späť do 5 minút</p>
               </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
             <h1>Hodnotenia zákazníkov</h1>
           </div>
           <div className="sub_title">
-            <p>на сайте { comments.length } отзывов</p>
+            <p>Na stránke { comments.length } recenzií</p>
             <p>Recenzie sa objavujú s oneskorením 5-10 minút</p>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
                           <h3>{ item.name }</h3>
                         </div>
                         <div className="date">
-                          <p>{ moment(item.date).format('DD MMMM YYYY') }</p>
+                          <p>{ moment(item.date._seconds).format('DD MMMM YYYY') }</p>
                         </div>
                       </div>
                       <div className="green_small_bar" ></div>
@@ -240,8 +240,8 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
           </div>
         </div>
         <div className="reviews_actions">
-          <Button onClick={() => setAddReviewVisible(true)} >Оставить отзыв</Button>
-          <Link to="vse-otzivi"><Button>Смотреть все отзывы</Button></Link>
+          <Button onClick={() => setAddReviewVisible(true)} >Zanechať recenziu</Button>
+          <Link to="vse-otzivi"><Button>Zobraziť všetky recenzie</Button></Link>
         </div>
       </div>
     </div>
