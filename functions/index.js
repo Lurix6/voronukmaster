@@ -18,6 +18,8 @@ app.get('/:function', async (req, res) => {
   switch (req.params.function) {
     case 'getComments': 
       return await getComments(req, res);  
+    case 'getWorkImg': 
+      return await getWorkImg(req, res);  
     default:
       return res.status(404).json({
         errors: 'Can not find endpoint'
@@ -102,6 +104,23 @@ async function getComments(req, res) {
     //const response = list.docs.map(item => ({...item.data(), id: item.id}) )
   }
   catch (e) {
+    res.status(500).json({ errors: e })
+  }
+}
+
+async function getWorkImg(req, res) {
+  try {
+    const newList = [];
+
+    await db.collection('workImg/').get().then( snapshot => {
+      if (!snapshot.empty) {
+        snapshot.forEach(doc => {
+          newList.push({...doc.data(), id: doc.id})
+        });
+      }
+    });
+    res.status(200).json(newList)
+  } catch (e) {
     res.status(500).json({ errors: e })
   }
 }
