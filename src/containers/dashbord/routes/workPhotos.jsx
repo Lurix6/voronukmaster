@@ -1,56 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default ({...othherProps}) => {
+  const [workPhoto, setWorkPhoto] = useState([]);
 
-  const photos = [
-    {
-    img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    },
-    {
-      img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/potechki%2F10.jpg?alt=media&token=b98e5dec-bbc2-4a08-9673-a2ccd62fbe5b" />
-    }
-]
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://us-central1-kurenar-vodar.cloudfunctions.net/main/getWorkImg',
+      );
+      setWorkPhoto(result.data);
+    };
+    fetchData();
+  }, []);
+
 
   return(
     <div className="base">
       <div className="base_wrapper">
         <div className="base_main_container">
           {
-            photos.map((item, index) => (
+            workPhoto.map((item, index) => (
               <div key={index} className="grid_item_wrapper">
                 <div className="grid_item">
                   <div className="preview">
-                    { item.img }
+                    <img src={item.imgSrc } />
                   </div>
                 </div>
               </div>

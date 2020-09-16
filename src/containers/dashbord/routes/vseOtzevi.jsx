@@ -7,7 +7,6 @@ export default ({comments, ...othherProps}) => {
   useEffect(() => {
     document.querySelector('.scrollBox').scrollTo(0, 0);
   }, []);
-
   return(
     <div className="vse_otzivi">
       <div className="base_wrapper">
@@ -24,7 +23,7 @@ export default ({comments, ...othherProps}) => {
                       { item.name }
                     </p>
                     <p>
-                      {  moment(item.date._seconds).format('DD MMMM YYYY') }
+                      { moment.unix(item.date._seconds).format('DD-MM-YYYY') }
                     </p>
                   </div>
                   <div className="grid_item__text">

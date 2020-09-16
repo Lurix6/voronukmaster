@@ -243,7 +243,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
                           <h3>{ item.name }</h3>
                         </div>
                         <div className="date">
-                          <p>{ moment(item.date._seconds).format('DD MMMM YYYY') }</p>
+                          <p>{ moment.unix(item.date._seconds).format('DD-MM-YYYY') }</p>
                         </div>
                       </div>
                       <div className="green_small_bar" ></div>

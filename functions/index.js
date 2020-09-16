@@ -9,7 +9,7 @@ app.use(cors());
 
 admin.initializeApp({
   credential: admin.credential.cert( key ),
-  databaseURL: "https://voronukmaster.firebaseio.com"
+  databaseURL: "https://kurenar-vodar.firebaseio.com"
 });
 
 const db = admin.firestore();

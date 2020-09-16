@@ -145,8 +145,8 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
     <SiteContent {...restProps} 
       setModalVisible={setModalVisible} 
       onFinish={onFinish} 
-      goLeft={goLeft} 
-      goRight={goRight} 
+      goLeft={ goRight } 
+      goRight={goLeft} 
       advantage={advantage} 
       carouselAdvantageRef={carouselAdvantageRef}
       comments={comments}
@@ -209,7 +209,7 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
         <div className="add_review">
           <div className="title">
             <p>
-              Оставьте отзыв
+              Zanechať recenziu
             </p>
           </div>
           <div className="body_content">

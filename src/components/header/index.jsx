@@ -81,7 +81,7 @@ function Header({ setModalVisible, phone, history, location }) {
       <div className="wrapper_header">
         <ul className="wrapper_header__container">
           {
-            phoneMenu.map(item => <Link to={item.href} onClick={scrollToContent} >{item.title}</Link>)
+            phoneMenu.map((item, key) => <Link key={key} to={item.href} onClick={scrollToContent} >{item.title}</Link>)
           }
         </ul>
       </div>
