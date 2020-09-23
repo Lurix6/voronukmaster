@@ -220,13 +220,13 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
                 name="name"
                 rules={[{ required: true, message: 'Please input your Name!' }]}
               >
-                <Input placeholder="Ваше имя" />
+                <Input placeholder="Tvoje meno" />
               </Form.Item>
               <Form.Item
                 name="text"
                 rules={[{ required: true, message: 'Please input your Text!' }]}
               >
-                <Input.TextArea placeholder="Ваш текст"  rows="5" />
+                <Input.TextArea placeholder="Tvoj text"  rows="5" />
               </Form.Item>
               <Form.Item >
                 <Button type="primary" htmlType="submit">
