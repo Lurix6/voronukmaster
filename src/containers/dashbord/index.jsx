@@ -2,17 +2,13 @@ import React, { useRef, useState, useEffect  } from 'react';
 import './style.scss';
 import MaskedInput from 'antd-mask-input'
 import { Form, Button, Input } from 'antd';
-import moment from 'moment'
 import { Carousel, Modal, notification  } from 'antd';
-import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
 import MailCred from '../../helpers/emailCred/';
 import emailjs from 'emailjs-com';
 import Footer from '../../components/footer/';
 import Garant from '../../assets/svg/garant.svg'
 import Speed from '../../assets/svg/speed.svg'
 import Securety from '../../assets/svg/securety.svg'
-import Reliability from '../../assets/svg/reliability.svg'
-import Return from '../../assets/svg/return.svg'
 import PayMent from '../../assets/svg/payment.svg'
 import Env from '../../assets/svg/env.svg'
 import Sale from '../../assets/svg/sale.svg'
@@ -47,7 +43,7 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
   const addNewComment = async (data) => {
     const res = await axios.post('https://us-central1-kurenar-vodar.cloudfunctions.net/main/createComment', data)
     if( res.status === 200 ) {
-      setComents([...comments, {...data, date: moment()}])
+      setComents([...comments, {...data, date: {_seconds: new Date().getTime()/1000}}])
       setAddReviewVisible(false)
     }
   }
@@ -145,8 +141,8 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
     <SiteContent {...restProps} 
       setModalVisible={setModalVisible} 
       onFinish={onFinish} 
-      goLeft={ goRight } 
-      goRight={goLeft} 
+      goLeft={goLeft} 
+      goRight={goRight} 
       advantage={advantage} 
       carouselAdvantageRef={carouselAdvantageRef}
       comments={comments}

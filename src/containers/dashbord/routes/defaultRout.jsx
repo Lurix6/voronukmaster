@@ -8,7 +8,6 @@ import Baner from '../../../assets/img/baner.jpg'
 import Car from '../../../assets/img/car.svg'
 import Time from '../../../assets/img/time.svg'
 import Mask from '../../../assets/img/mask.svg'
-import Pensione1 from '../../../assets/img/pensioner'
 import { Form, Button, Input, Carousel } from 'antd';
 import { LeftOutlined, RightOutlined }  from '@ant-design/icons';
 import MaskedInput from 'antd-mask-input'
@@ -218,12 +217,12 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
           </div>
           <div className="second_review_controlers">
             <div className="go_left_dub">
-              <div onClick={() => goRight(carouselRef)}>
+              <div onClick={() => goLeft(carouselRef)}>
                 <LeftOutlined />
               </div>
             </div>
             <div className="go_right_dub">
-            <div onClick={() => goLeft(carouselRef)}>
+            <div onClick={() => goRight(carouselRef)}>
               <RightOutlined />
             </div>
           </div>

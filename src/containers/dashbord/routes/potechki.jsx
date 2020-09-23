@@ -228,12 +228,12 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
           </div>
           <div className="second_review_controlers">
             <div className="go_left_dub">
-              <div onClick={() => goRight(carouselRef)}>
+              <div onClick={() => goLeft(carouselRef)}>
                 <LeftOutlined />
               </div>
             </div>
             <div className="go_right_dub">
-            <div onClick={() => goLeft(carouselRef)}>
+            <div onClick={() => goRight(carouselRef)}>
               <RightOutlined />
             </div>
           </div>
