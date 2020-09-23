@@ -59,7 +59,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F10.jpg?alt=media&token=a1e4b33d-1488-40bf-8c04-a189d4ea13f3" />,
       title: 'Inštalácia prečerpavačky',
-      price: 'Od 120 eur.'
+      price: 'Od 40 eur.'
     },
     {
       img: <img src="https://firebasestorage.googleapis.com/v0/b/voronukmaster.appspot.com/o/ustanovka%2F11.jpg?alt=media&token=014e52c3-1753-4c9f-aaf6-379abe085a11" />,

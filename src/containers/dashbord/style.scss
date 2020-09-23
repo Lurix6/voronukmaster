@@ -848,8 +848,19 @@
         }
       }
       .reviews_actions {
+        justify-content: space-around !important;
+        flex-wrap: wrap;
         .ant-btn {
           margin-left: 0 !important;
+          width: auto !important;
+        }
+
+        .ant-btn:first-child {
+          margin-bottom: 10px;
+        }
+
+        span {
+          font-size: 13px;
         }
       }
     }

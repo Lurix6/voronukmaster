@@ -190,3 +190,19 @@
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  .footer {
+    .footer_wrapper {
+      .footer_contact {
+        padding: 0 !important;
+
+        .contact_us {
+          p {
+            white-space: normal !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
       img: <img src={Santehnik} />,
       title: 'Inštalatérske služby',
       href: '',
-      price: 'Od 25 eur vypočítať náklady.'
+      price: 'Od 25 eur.'
     },
     {
       img: <img src={Zasor} />,

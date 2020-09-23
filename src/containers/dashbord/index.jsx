@@ -38,9 +38,9 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
 
   const openNotification = () => {
     notification.open({
-      message: 'Ваш запит надіслано !',
+      message: 'Vaša žiadosť bola odoslaná!',
       description:
-        'Очікуйте дзвінка від майстра.',
+        'Počkajte na telefonát od majstra.',
     });
   };
 
