@@ -218,13 +218,13 @@ const Dashbord = ({visibleModal, setModalVisible, ...restProps}) => {
             >
               <Form.Item
                 name="name"
-                rules={[{ required: true, message: 'Please input your Name!' }]}
+                rules={[{ required: true, message: 'Zadajte svoje meno!' }]}
               >
                 <Input placeholder="Tvoje meno" />
               </Form.Item>
               <Form.Item
                 name="text"
-                rules={[{ required: true, message: 'Please input your Text!' }]}
+                rules={[{ required: true, message: 'Prosím, vložte svoj text!' }]}
               >
                 <Input.TextArea placeholder="Tvoj text"  rows="5" />
               </Form.Item>
