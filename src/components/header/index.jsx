@@ -4,7 +4,7 @@ import { Button, Drawer, Collapse } from 'antd';
 import Logo from '../../assets/img/main_logo2.png'
 import { Link } from 'react-router-dom';
 import {FieldTimeOutlined} from '@ant-design/icons';
-import { MailOutlined, PhoneFilled, MenuOutlined }  from '@ant-design/icons';
+import { MenuOutlined }  from '@ant-design/icons';
 
 const { Panel } = Collapse;
 
@@ -15,23 +15,23 @@ const phoneMenu = [
   },
   {
     title: 'Inštalatérske práce',
-    href: 'ustanovka-santehniki',
+    href: 'inštalatérske-práce',
   },
   {
     title: 'Výmena sanity',
-    href: 'zamena-santehniki',
+    href: 'výmena-sanity',
   },
   {
     title: 'Montáž potrubia',
-    href: 'razvodka-trub',
+    href: 'montáž-potrubia',
   },
   {
     title: 'Eliminácia netesností potrubia',
-    href: 'ustranenie-protechek',
+    href: 'eliminácia-netesností-potrubia',
   },
   {
     title: 'Fotografie našich prác',
-    href: 'photo-robot',
+    href: 'fotografie-našich-prác',
   },
 ]
 
@@ -40,7 +40,7 @@ function Header({ setModalVisible, phone, history, location }) {
 
   const scrollToContent = () => {
     const basse_wrapper = document.querySelector('.base_heder')?.getBoundingClientRect()
-    window.scrollTo({ behavior: 'smooth', top: basse_wrapper?.top })
+    window.scrollTo({ behavior: 'smooth', top: basse_wrapper?.top - 10 })
   }
 
   return (
@@ -52,7 +52,7 @@ function Header({ setModalVisible, phone, history, location }) {
               <MenuOutlined onClick={() => setVisible(true)} />
             </div>
             <div className="main_logo">
-              <Link to='/' >
+              <Link to='/' onClick={scrollToContent} >
                 <img src={Logo} />
               </Link>
             </div>
@@ -107,7 +107,7 @@ function Header({ setModalVisible, phone, history, location }) {
             <div className="mobile_menu_footer">
               <div className="mobile_sub_menu">
                 <li>
-                  <Link to="/vse-otzivi" >Recenzie</Link>
+                  <Link to="/všetky-recenzie" >Recenzie</Link>
                 </li>
               </div>
               <div className="mobile_call_data">

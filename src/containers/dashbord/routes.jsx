@@ -16,34 +16,34 @@ const routes = [
     component: DefaultRoute 
   },
   {
-    path: 'ustanovka-santehniki',
+    path: 'inštalatérske-práce',
     exact: true,
     component: Ustanovka 
   },
   {
-    path: 'zamena-santehniki',
+    path: 'výmena-sanity',
     exact: true,
     component: Zamena 
   },
   {
     exact: true,
-    path: 'razvodka-trub',
+    path: 'montáž-potrubia',
     component: Razvodka 
   },
 
   {
     exact: true,
-    path: 'ustranenie-protechek',
+    path: 'eliminácia-netesností-potrubia',
     component: Potechka
   },
   {
     exact: true,
-    path: 'photo-robot',
+    path: 'fotografie-našich-prác',
     component: Photo
   },
   {
     exact: true,
-    path: 'vse-otzivi',
+    path: 'zanechať-recenziu',
     component: VseOtveti
   }
 ];

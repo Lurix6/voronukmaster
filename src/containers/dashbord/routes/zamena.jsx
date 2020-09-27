@@ -275,7 +275,7 @@ export default ({addReview, setAddReviewVisible, setModalVisible, onFinish, adva
         </div>
         <div className="reviews_actions">
           <Button onClick={() => setAddReviewVisible(true)} >Zanechať recenziu</Button>
-          <Link to="vse-otzivi"><Button>Zobraziť všetky recenzie</Button></Link>
+          <Link to="všetky-recenzie"><Button>Zobraziť všetky recenzie</Button></Link>
         </div>
       </div>
     </div>
