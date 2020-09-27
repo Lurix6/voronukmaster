@@ -43,8 +43,11 @@ const routes = [
   },
   {
     exact: true,
-    path: 'zanechať-recenziu',
+    path: 'všetky-recenzie',
     component: VseOtveti
+  },
+  {
+    component: () => <div> Page no found 404 </div>
   }
 ];
 
